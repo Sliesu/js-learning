@@ -3,15 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript</title>
+    <title>夜课 · JavaScript</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="app">
       <aside class="rail">
         <div class="rail-head">
-          <div class="mark" aria-hidden="true">JS</div>
+          <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+            <defs>
+              <linearGradient id="night-sky" x1="8" y1="2" x2="40" y2="42">
+                <stop offset="0" stop-color="#243356" />
+                <stop offset="1" stop-color="#070b16" />
+              </linearGradient>
+            </defs>
+            <rect width="44" height="44" rx="13" fill="url(#night-sky)" />
+            <circle cx="27" cy="16" r="7" fill="#f6e7c1" />
+            <circle cx="31" cy="14" r="6.2" fill="#10182c" />
+            <circle cx="12" cy="12" r="1" fill="#fff" />
+            <circle cx="16" cy="20" r="0.7" fill="#fff" opacity="0.8" />
+            <circle cx="13" cy="30" r="0.9" fill="#fff" opacity="0.55" />
+          </svg>
           <div>
+            <p class="eyebrow">夜课</p>
             <h1>JavaScript</h1>
             <p class="tagline">从一句语句，到把数据跑起来</p>
             <p id="progress-summary">加载中…</p>

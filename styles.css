@@ -24,8 +24,8 @@ html, body {
   letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   background:
-    radial-gradient(900px 480px at 0% -10%, rgba(0, 113, 227, 0.16), transparent 55%),
-    radial-gradient(700px 420px at 100% 0%, rgba(94, 92, 230, 0.12), transparent 50%),
+    radial-gradient(720px 420px at 0% 0%, rgba(18, 28, 58, 0.18), transparent 58%),
+    radial-gradient(640px 380px at 100% 0%, rgba(88, 96, 160, 0.14), transparent 52%),
     var(--bg);
 }
 
@@ -42,10 +42,13 @@ button { cursor: pointer; }
   margin: 14px 0 14px 14px;
   padding: 22px 14px 14px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.62);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 18px 40px rgba(28, 32, 48, 0.06);
-  backdrop-filter: blur(18px) saturate(160%);
+  color: #f4f1ea;
+  background:
+    radial-gradient(140px 90px at 12% 0%, rgba(246, 231, 193, 0.18), transparent 72%),
+    radial-gradient(220px 140px at 100% 8%, rgba(92, 124, 214, 0.22), transparent 70%),
+    linear-gradient(180deg, #18233a 0%, #0c101b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 40px rgba(8, 12, 24, 0.28);
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -54,41 +57,43 @@ button { cursor: pointer; }
 .rail-head { display: flex; gap: 12px; align-items: flex-start; }
 
 .mark {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   flex: none;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  color: white;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.eyebrow {
+  margin: 0;
+  color: #f0d7a2;
+  font-size: 11px;
   font-weight: 650;
-  font-size: 15px;
-  letter-spacing: -0.04em;
-  background: linear-gradient(160deg, #3d8bff 0%, #0071e3 48%, #5856d6 100%);
-  box-shadow: 0 8px 16px rgba(0, 113, 227, 0.28);
+  letter-spacing: 0.18em;
 }
 
 .rail h1 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 650;
+  margin: 1px 0 0;
+  color: #f7f4ee;
+  font-size: 22px;
+  font-weight: 640;
   letter-spacing: -0.03em;
 }
 
-.tagline, .rail-head p {
+.tagline, #progress-summary {
   margin: 2px 0 0;
-  color: var(--secondary);
+  color: #b7c0d4;
   font-size: 12px;
   line-height: 1.4;
 }
 
-#progress-summary { margin-top: 6px; color: var(--blue); font-weight: 590; }
+#progress-summary { margin-top: 6px; color: #f0d7a2; font-weight: 600; }
 
 .rail-progress {
   margin: 16px 4px 14px;
   height: 4px;
   border-radius: 99px;
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   overflow: hidden;
 }
 
@@ -97,7 +102,7 @@ button { cursor: pointer; }
   height: 100%;
   width: 0;
   border-radius: inherit;
-  background: linear-gradient(90deg, #0071e3, #5e5ce6);
+  background: linear-gradient(90deg, #f0d7a2, #8eb0ff);
 }
 
 .rail-switch {
@@ -106,13 +111,14 @@ button { cursor: pointer; }
   gap: 2px;
   padding: 3px;
   margin-bottom: 10px;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 11px;
 }
 
 .switch {
   border: 0;
   background: transparent;
+  color: #d5dbeb;
   border-radius: 8px;
   padding: 6px 8px;
   font-size: 13px;
@@ -120,8 +126,9 @@ button { cursor: pointer; }
 }
 
 .switch.active {
-  background: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 #search-input {
@@ -129,14 +136,15 @@ button { cursor: pointer; }
   border: 0;
   border-radius: 11px;
   padding: 9px 12px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f4f1ea;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   font-size: 13px;
   margin-bottom: 6px;
 }
 
-#search-input::placeholder { color: var(--tertiary); }
-#search-input:focus { outline: 2px solid rgba(0, 113, 227, 0.35); }
+#search-input::placeholder { color: #8e98ae; }
+#search-input:focus { outline: 2px solid rgba(240, 215, 162, 0.45); }
 
 .rail-list { overflow: auto; padding-right: 2px; }
 
@@ -145,7 +153,7 @@ button { cursor: pointer; }
   font-size: 11px;
   font-weight: 650;
   letter-spacing: 0.04em;
-  color: var(--tertiary);
+  color: #8e98ae;
 }
 
 .nav-item {
@@ -153,6 +161,7 @@ button { cursor: pointer; }
   text-align: left;
   border: 0;
   background: transparent;
+  color: #e7ebf5;
   border-radius: 10px;
   padding: 7px 10px;
   display: flex;
@@ -162,17 +171,17 @@ button { cursor: pointer; }
 }
 
 .nav-item span:first-child { font-size: 13px; line-height: 1.35; }
-.nav-item:hover { background: rgba(255, 255, 255, 0.7); }
+.nav-item:hover { background: rgba(255, 255, 255, 0.06); }
 .nav-item.active {
-  background: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  background: rgba(246, 231, 193, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(246, 231, 193, 0.18);
 }
 
 .done-mark {
   flex: none;
   font-size: 11px;
   font-weight: 600;
-  color: var(--green);
+  color: #f0d7a2;
 }
 
 .read, .bench { min-height: 0; overflow: auto; }
@@ -188,7 +197,7 @@ button { cursor: pointer; }
 
 .kicker {
   margin: 0 0 8px;
-  color: var(--blue);
+  color: #6d6248;
   font-size: 12px;
   font-weight: 650;
 }
@@ -208,7 +217,7 @@ button { cursor: pointer; }
   margin-right: 10px;
   padding: 2px 8px 3px;
   border-radius: 8px;
-  background: #1d1d1f;
+  background: #121826;
   color: white;
   font-size: 14px;
   font-variant-numeric: tabular-nums;
