@@ -10,8 +10,10 @@
     <div class="app">
       <aside class="rail">
         <div class="rail-head">
+          <div class="mark" aria-hidden="true">JS</div>
           <div>
             <h1>JavaScript</h1>
+            <p class="tagline">从一句语句，到把数据跑起来</p>
             <p id="progress-summary">加载中…</p>
           </div>
         </div>
@@ -37,8 +39,9 @@
         </header>
         <article id="lesson-doc" class="article"></article>
         <section class="demo-card">
-          <header>
-            <h3>例子跑出来是这样</h3>
+          <header class="window-bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <h3>例子</h3>
             <button id="btn-run-lesson" type="button">再跑一次</button>
           </header>
           <pre id="demo-output" class="demo-out">正在准备例子…</pre>
@@ -58,8 +61,14 @@
           </div>
         </header>
         <div class="editor-shell">
-          <div id="gutter" class="gutter" aria-hidden="true"></div>
-          <textarea id="editor" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+          <div class="window-bar dark">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="window-name">exercise.js</span>
+          </div>
+          <div class="editor-body">
+            <div id="gutter" class="gutter" aria-hidden="true"></div>
+            <textarea id="editor" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+          </div>
         </div>
         <section id="result-panel" class="result idle">
           <p id="result-title">还没检查。写完点上面的按钮。</p>
