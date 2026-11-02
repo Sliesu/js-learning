@@ -1,6 +1,7 @@
 import { PHASES, ALL_LESSONS, FEATURE_INDEX } from "./curriculum.js";
 import { createAssert } from "./assert.js";
 import { createContext } from "./context.js";
+import { formatTextarea, handleEditorKeydown, renderGutter } from "./editor.js";
 
 const STORAGE_KEY = "js_learn_progress_v1";
 const LAST_LESSON_KEY = "js_learn_current_lesson_v1";
@@ -40,6 +41,7 @@ const els = {
   btnNext: document.getElementById("btn-next"),
   btnRunLesson: document.getElementById("btn-run-lesson"),
   btnTest: document.getElementById("btn-test-exercise"),
+  btnFormat: document.getElementById("btn-format"),
   btnShowSolution: document.getElementById("btn-show-solution"),
   btnReset: document.getElementById("btn-reset"),
   btnUseSolution: document.getElementById("btn-use-solution"),
@@ -145,9 +147,14 @@ function renderDoc(lessonMod) {
 }
 
 function syncGutter() {
-  const lines = els.editor.value.split("\n").length;
-  els.gutter.textContent = Array.from({ length: lines }, (_, index) => index + 1).join("\n");
+  renderGutter(els.gutter, els.editor.value);
   els.gutter.scrollTop = els.editor.scrollTop;
+}
+
+function formatEditor() {
+  formatTextarea(els.editor);
+  syncGutter();
+  rememberDraft();
 }
 
 function rememberDraft() {
@@ -293,18 +300,23 @@ els.editor.addEventListener("scroll", () => {
   els.gutter.scrollTop = els.editor.scrollTop;
 });
 els.editor.addEventListener("keydown", (event) => {
-  if (event.key === "Tab") {
+  const formatShortcut =
+    event.shiftKey &&
+    (event.altKey || event.metaKey || event.ctrlKey) &&
+    event.key.toLowerCase() === "f";
+  if (formatShortcut) {
     event.preventDefault();
-    const start = els.editor.selectionStart;
-    const end = els.editor.selectionEnd;
-    els.editor.value = `${els.editor.value.slice(0, start)}  ${els.editor.value.slice(end)}`;
-    els.editor.selectionStart = els.editor.selectionEnd = start + 2;
-    syncGutter();
-    rememberDraft();
+    formatEditor();
+    return;
   }
   if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
     event.preventDefault();
     checkCurrentCode();
+    return;
+  }
+  if (handleEditorKeydown(els.editor, event)) {
+    syncGutter();
+    rememberDraft();
   }
 });
 
@@ -334,6 +346,7 @@ els.btnNext.addEventListener("click", () => {
 });
 els.btnRunLesson.addEventListener("click", () => runDemo(getLesson(state.currentId)));
 els.btnTest.addEventListener("click", () => checkCurrentCode());
+els.btnFormat.addEventListener("click", () => formatEditor());
 els.btnShowSolution.addEventListener("click", () => {
   els.solutionFold.open = true;
   els.solutionView.scrollIntoView({ block: "nearest" });
