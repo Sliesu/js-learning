@@ -1,0 +1,11 @@
+{
+  "name": "js-learn",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "JavaScript 系统性学习项目（从零基础到语言全貌与数据调用/处理）",
+  "scripts": {
+    "start": "node src/static-server.js",
+    "verify": "node src/verify-all.js"
+  }
+}

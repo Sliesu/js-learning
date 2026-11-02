@@ -1,0 +1,7 @@
+[
+  { "id": "u1", "name": "林晓", "city": "上海", "tier": "gold", "active": true, "joinedAt": "2024-03-15" },
+  { "id": "u2", "name": "周牧", "city": "北京", "tier": "silver", "active": true, "joinedAt": "2024-06-02" },
+  { "id": "u3", "name": "陈予", "city": "上海", "tier": "gold", "active": false, "joinedAt": "2023-11-20" },
+  { "id": "u4", "name": "宋然", "city": "深圳", "tier": "bronze", "active": true, "joinedAt": "2025-01-10" },
+  { "id": "u5", "name": "顾言", "city": "杭州", "tier": "silver", "active": true, "joinedAt": "2025-02-18" }
+]

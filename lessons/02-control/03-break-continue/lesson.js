@@ -1,0 +1,31 @@
+export const summary =
+  "使用 `continue` 跳过当前轮次、`break` 终止当前循环，以及使用命名标签 `outer: for (...)` 一次性跳出多层嵌套循环。";
+
+export const keyPoints = [
+  "`continue` 立即进入下一轮循环迭代；`break` 立即退出所在的最内层循环或 `switch`。",
+  "当二维表格/矩阵查找命中第一个目标需要立即停止整个双层循环时，`break labelName;` 可以精准跳出外层循环。",
+];
+
+export const remember = [
+  "如果把双层循环封装成独立函数，直接 `return result;` 比写 `break outer;` 更直观。",
+];
+
+export const taskDescription =
+  "实现 `findInMatrix(grid, target)`：在二维数组 `grid` 中寻找 `target`，找到即返回 `{ row, col }`，未找到返回 `null`（跳过非数组的无效行）。";
+
+export async function runDemo(ctx) {
+  const matrix = [
+    [1, 2],
+    [3, 4],
+  ];
+  let found = null;
+  search: for (let r = 0; r < matrix.length; r++) {
+    for (let c = 0; c < matrix[r].length; c++) {
+      if (matrix[r][c] === 3) {
+        found = { r, c };
+        break search;
+      }
+    }
+  }
+  ctx.log("矩阵查找 3 的坐标:", found);
+}

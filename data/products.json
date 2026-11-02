@@ -1,0 +1,7 @@
+[
+  { "id": "p1", "title": "机械键盘", "category": "外设", "price": 499, "stock": 32 },
+  { "id": "p2", "title": "人体工学鼠标", "category": "外设", "price": 299, "stock": 50 },
+  { "id": "p3", "title": "4K 显示器", "category": "显示", "price": 1899, "stock": 12 },
+  { "id": "p4", "title": "Type-C 扩展坞", "category": "配件", "price": 159, "stock": 85 },
+  { "id": "p5", "title": "降噪耳机", "category": "音频", "price": 899, "stock": 0 }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "o101",
+    "userId": "u1",
+    "status": "paid",
+    "createdAt": "2025-03-01T10:15:00Z",
+    "items": [
+      { "productId": "p1", "qty": 1, "unitPrice": 499 },
+      { "productId": "p4", "qty": 2, "unitPrice": 159 }
+    ]
+  },
+  {
+    "id": "o102",
+    "userId": "u2",
+    "status": "paid",
+    "createdAt": "2025-03-02T14:30:00Z",
+    "items": [
+      { "productId": "p2", "qty": 1, "unitPrice": 299 }
+    ]
+  },
+  {
+    "id": "o103",
+    "userId": "u1",
+    "status": "cancelled",
+    "createdAt": "2025-03-03T09:00:00Z",
+    "items": [
+      { "productId": "p3", "qty": 1, "unitPrice": 1899 }
+    ]
+  },
+  {
+    "id": "o104",
+    "userId": "u4",
+    "status": "paid",
+    "createdAt": "2025-03-04T18:20:00Z",
+    "items": [
+      { "productId": "p3", "qty": 1, "unitPrice": 1899 },
+      { "productId": "p2", "qty": 2, "unitPrice": 299 }
+    ]
+  },
+  {
+    "id": "o105",
+    "userId": "u5",
+    "status": "pending",
+    "createdAt": "2025-03-05T08:05:00Z",
+    "items": [
+      { "productId": "p5", "qty": 1, "unitPrice": 899 }
+    ]
+  },
+  {
+    "id": "o106",
+    "userId": "u1",
+    "status": "paid",
+    "createdAt": "2025-03-06T11:45:00Z",
+    "items": [
+      { "productId": "p2", "qty": 1, "unitPrice": 299 }
+    ]
+  }
+]

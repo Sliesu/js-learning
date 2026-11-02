@@ -1,0 +1,26 @@
+export const summary =
+  "综合实战二：构建带「远程接口优先 + 超时/异常自动回退本地数据集」的高可用数据管道，确保无论联网与否脚本都能完成计算。";
+
+export const keyPoints = [
+  "生产环境脚本访问外部接口时，必须考虑离线、DNS 失败、HTTP 5xx 或响应超时。",
+  "将数据源获取抽象为 `try { return { source: 'remote', list: await remoteFetcher() }; } catch { return { source: 'local-fallback', list: await ctx.fetchJson('data/users.json') }; }`，下游的数据清洗与统计管道代码完全复用。",
+];
+
+export const remember = [
+  "数据源适配层（Adapter）与业务计算层（Pipeline）分离，是编写健壮脚本的终极心法。",
+];
+
+export const taskDescription =
+  "实现 `runResilientUserPipeline(ctx, remoteFetcher)`：先尝试 `await remoteFetcher()`，若抛错或返回的不是非空数组，则回退调用 `await ctx.fetchJson('data/users.json')`；最后统计活跃用户数量并返回 `{ source: 'remote' | 'fallback', activeCount, names }`。";
+
+export async function runDemo(ctx) {
+  let source = "remote";
+  let users;
+  try {
+    throw new Error("模拟离线或网络受限");
+  } catch {
+    source = "fallback";
+    users = await ctx.fetchJson("data/users.json");
+  }
+  ctx.log(`数据源 [${source}] 加载成功，共 ${users.length} 条记录`);
+}

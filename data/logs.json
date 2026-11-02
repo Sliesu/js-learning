@@ -1,0 +1,8 @@
+[
+  { "seq": 1, "level": "INFO", "service": "auth", "latencyMs": 18, "msg": "user=u1 action=login" },
+  { "seq": 2, "level": "WARN", "service": "order", "latencyMs": 240, "msg": "user=u2 action=slow_query" },
+  { "seq": 3, "level": "ERROR", "service": "payment", "latencyMs": 510, "msg": "user=u3 action=charge_failed" },
+  { "seq": 4, "level": "INFO", "service": "order", "latencyMs": 35, "msg": "user=u1 action=create_order" },
+  { "seq": 5, "level": "ERROR", "service": "payment", "latencyMs": 480, "msg": "user=u4 action=timeout" },
+  { "seq": 6, "level": "INFO", "service": "auth", "latencyMs": 12, "msg": "user=u5 action=login" }
+]

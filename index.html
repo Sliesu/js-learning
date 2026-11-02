@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="rail">
+        <div class="rail-head">
+          <div>
+            <h1>JavaScript</h1>
+            <p id="progress-summary">加载中…</p>
+          </div>
+        </div>
+        <div class="rail-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+        <div class="rail-switch">
+          <button id="tab-lessons" class="switch active" type="button">目录</button>
+          <button id="tab-features" class="switch" type="button">语法表</button>
+        </div>
+        <input id="search-input" type="search" placeholder="搜课名或语法" />
+        <nav id="nav-list" class="rail-list"></nav>
+      </aside>
+
+      <section class="read">
+        <header class="read-head">
+          <div>
+            <p class="kicker" id="lesson-phase">阶段</p>
+            <h2><span id="lesson-id">0.1</span> <span id="lesson-title">加载中…</span></h2>
+          </div>
+          <div class="read-nav">
+            <button id="btn-prev" type="button">上一课</button>
+            <button id="btn-next" type="button">下一课</button>
+          </div>
+        </header>
+        <article id="lesson-doc" class="article"></article>
+        <section class="demo-card">
+          <header>
+            <h3>例子跑出来是这样</h3>
+            <button id="btn-run-lesson" type="button">再跑一次</button>
+          </header>
+          <pre id="demo-output" class="demo-out">正在准备例子…</pre>
+        </section>
+      </section>
+
+      <section class="bench">
+        <header class="bench-head">
+          <div>
+            <h3>你的代码</h3>
+            <p id="save-note">写在这里，马上检查。不用切回编辑器。</p>
+          </div>
+          <div class="bench-actions">
+            <button id="btn-test-exercise" class="go" type="button">检查这题 <kbd>⌘↵</kbd></button>
+            <button id="btn-show-solution" type="button">看题解</button>
+            <button id="btn-reset" type="button">恢复原题</button>
+          </div>
+        </header>
+        <div class="editor-shell">
+          <div id="gutter" class="gutter" aria-hidden="true"></div>
+          <textarea id="editor" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+        </div>
+        <section id="result-panel" class="result idle">
+          <p id="result-title">还没检查。写完点上面的按钮。</p>
+          <ul id="result-list"></ul>
+        </section>
+        <details class="solution-fold" id="solution-fold">
+          <summary>题解代码</summary>
+          <pre id="solution-view"></pre>
+          <button id="btn-use-solution" type="button">把题解放进编辑器看看为什么能过</button>
+        </details>
+        <button id="btn-verify-all" class="quiet" type="button">开发者自测：跑完全部题解</button>
+        <pre id="verify-output" class="verify-out" hidden></pre>
+      </section>
+    </div>
+    <script type="module" src="./src/runner.js"></script>
+  </body>
+</html>
