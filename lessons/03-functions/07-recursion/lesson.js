@@ -1,17 +1,17 @@
 export const summary =
-  "用递归（Recursion）处理层级未知的树形数据（部门树、分类目录、嵌套评论），掌握基准终止条件（Base Case）与递推步。";
+  "一层套一层、事先不知道有多深的数据，比如部门树、评论楼中楼，用函数调用自己来处理最直接。一定要有停下来的条件。";
 
 export const keyPoints = [
-  "每个递归函数必须有明确的终止条件（如叶子节点没有 `children` 或空数组），否则会导致 `RangeError: Maximum call stack size exceeded`。",
-  "对于深层树或嵌套结构，递归比手写栈更直观；若深度可达数万层，可改写为显式数组栈循环。",
+  "递归必须有尽头。比如叶子节点没有 `children`，或者数组已经空了。没有尽头，就会报栈溢出。",
+  "树不太深的时候，递归比自己手写一个栈好读。如果可能深到几万层，再改成用数组当栈的循环。",
 ];
 
 export const remember = [
-  "处理树节点时：当前节点结果 = 自身值 + 所有子节点递归结果的汇总。",
+  "处理树上的一个节点时：它的结果 = 它自己的值 + 每个子节点用同样办法算出来的结果。",
 ];
 
 export const taskDescription =
-  "sumTreeValues(node) 把一棵树上所有节点的 value 加起来。每个节点是 { value, children }。没有节点时返回 0。有子节点就用同样的方法继续加。";
+  "写 `sumTreeValues(node)`，把一棵树上所有节点的 `value` 加起来。每个节点是 `{ value, children }`。没有节点时返回 0。有子节点，就用同样的函数继续加。";
 
 export async function runDemo(ctx) {
   const tree = {

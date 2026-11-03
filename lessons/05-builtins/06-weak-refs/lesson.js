@@ -1,18 +1,18 @@
 export const summary =
-  "理解弱引用容器 `WeakMap`、`WeakSet`（不阻止垃圾回收、防内存泄漏）以及底层弱引用 `WeakRef` 与 `FinalizationRegistry`。";
+  "`Map` 会一直抓住它的键。如果键是一个临时对象，这份对应关系就会让对象一直活着。`WeakMap` 不会：外面不再用这个对象时，缓存可以一起被回收。";
 
 export const keyPoints = [
-  "`WeakMap` 的键必须是对象（或非全局注册的 `Symbol`），对键是弱引用：一旦外部没有其他引用指向该键对象，GC 会自动回收该键值对，因此 `WeakMap` 不可枚举、没有 `.size`。",
-  "最适合用 `WeakMap` 的场景：给第三方对象挂载私有元数据或计算缓存，对象销毁时缓存自动释放，绝不泄漏内存。",
-  "`new WeakRef(target)` 通过 `.deref()` 获取目标对象（若已被回收则返回 `undefined`）。",
+  "`WeakMap` 的键必须是对象。它不阻止垃圾回收，所以不能遍历，也没有 `.size`。",
+  "给某个对象挂一份只有你知道的附加数据，或者按对象缓存计算结果，用 `WeakMap`。对象没了，缓存也没了。",
+  "`new WeakRef(target)` 是更弱的一层。`.deref()` 还能拿到对象；如果已经被回收，得到的是 `undefined`。",
 ];
 
 export const remember = [
-  "针对对象实例做计算结果缓存（Memoization per Object）时，永远用 `WeakMap` 而不是 `Map`。",
+  "按对象缓存计算结果，用 `WeakMap`，不要用 `Map`。否则这些对象会因为缓存一直留在内存里。",
 ];
 
 export const taskDescription =
-  "createObjectCache(computeFn) 返回一个函数，用来记住每个对象算出来的结果。同一个对象再次传进来时，直接返回上次的结果，不要重新计算。用 WeakMap 来存。对象不再使用以后，这份缓存也可以被清掉。";
+  "写 `createObjectCache(computeFn)`，返回一个函数，用来记住每个对象算出来的结果。同一个对象再次传进来时，直接返回上次的结果，不要重新计算。用 `WeakMap` 来存。对象不再被用到以后，这份缓存也可以被清掉。";
 
 export async function runDemo(ctx) {
   const wm = new WeakMap();

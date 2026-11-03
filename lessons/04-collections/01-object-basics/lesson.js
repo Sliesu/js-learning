@@ -1,18 +1,18 @@
 export const summary =
-  "掌握对象的字面量创建、点语法与方括号动态属性读写、`delete` 删除属性，以及 `'key' in obj` 与 `Object.hasOwn(obj, 'key')` 的区别。";
+  "对象用来装一组有名字的数据。读的时候，普通名字用点，名字来自变量、或者里面有横线，就用方括号。查一个字段在不在，要分清是自己的，还是从原型上继承来的。";
 
 export const keyPoints = [
-  "当属性名包含连字符、空格或来自变量时，必须使用方括号 `obj[dynamicKey]` 访问。",
-  "`'toString' in obj` 会沿着原型链向上查找并返回 `true`；而 `Object.hasOwn(obj, 'toString')` 只检查对象自身属性。",
-  "`delete obj.prop` 会从对象上移除该属性；若只想生成去掉某属性的新对象，用解构 `const { removed, ...rest } = obj` 更干净。",
+  "属性名里有横线、空格，或者名字存在变量里，必须写成 `obj[dynamicKey]`。",
+  "`'toString' in obj` 会顺着原型往上找，所以通常是 true。`Object.hasOwn(obj, 'toString')` 只看这个对象自己有没有这个字段。",
+  "`delete obj.prop` 是从对象上删掉这个属性。如果只是想要一份「去掉某字段」的新对象，用解构：`const { removed, ...rest } = obj`。",
 ];
 
 export const remember = [
-  "判断对象自身是否含有某字段，优先使用 `Object.hasOwn(obj, key)`，不要用 `obj[key] !== undefined`（因为属性值本身可能就是 `undefined`）。",
+  "判断自己有没有某个字段，用 `Object.hasOwn(obj, key)`。不要写 `obj[key] !== undefined`，因为这个字段的值本身就可能是 `undefined`。",
 ];
 
 export const taskDescription =
-  "pickOwnFields(record, keys) 按给定的字段名，从档案里取出一份新对象。只取这份档案自身已有的字段，用 Object.hasOwn 判断。原型上同名的字段不要取。";
+  "写 `pickOwnFields(record, keys)`，按给定的字段名，从档案里取出一份新对象。只取这份档案自己已有的字段，用 `Object.hasOwn` 判断。原型上同名的字段不要取。";
 
 export async function runDemo(ctx) {
   const user = { id: "u1", undefinedField: undefined };

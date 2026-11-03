@@ -1,17 +1,17 @@
 export const summary =
-  "掌握 `try / catch / finally` 的执行流与标准内置错误类型（`TypeError`、`RangeError`、`SyntaxError`、`ReferenceError`）。";
+  "可能抛错的代码放进 `try`。接住之后在 `catch` 里决定怎么办。`finally` 里的清理，无论成功还是失败都会跑。";
 
 export const keyPoints = [
-  "无论 `try` 块是正常 return 还是抛出异常进入 `catch`，`finally` 块中的清理代码都一定会执行。",
-  "根据错误性质抛出准确的内置子类：参数类型不对抛 `new TypeError(...)`，数值越界抛 `new RangeError(...)`。",
+  "`try` 正常返回也好，抛错进了 `catch` 也好，`finally` 都会执行。",
+  "错误的种类写清楚。类型不对用 `TypeError`，数值超出范围用 `RangeError`。别什么都扔一个普通 `Error`。",
 ];
 
 export const remember = [
-  "不要在 `catch (e) {}` 中吞掉所有错误却不做任何记录或降级返回值。",
+  "空的 `catch (e) {}` 会把错误吃掉，后面的人完全不知道这里失败过。要么记下来，要么返回一个明确的降级结果。",
 ];
 
 export const taskDescription =
-  "safeParseJson(rawStr, fallbackValue) 解析一段 JSON。成功时返回 { ok: true, data }。失败时不要把错误抛出去，返回 { ok: false, data: fallbackValue, errorName }。errorName 是错误的名字，例如 \"SyntaxError\"。没有传 fallbackValue 时，失败结果里的 data 用 null。";
+  "写 `safeParseJson(rawStr, fallbackValue)`，解析一段 JSON。成功时返回 `{ ok: true, data }`。失败时不要把错误抛出去，返回 `{ ok: false, data: fallbackValue, errorName }`。`errorName` 是错误的名字，比如 `\"SyntaxError\"`。没传 `fallbackValue` 时，失败结果里的 `data` 用 `null`。";
 
 export async function runDemo(ctx) {
   try {

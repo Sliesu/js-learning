@@ -1,17 +1,17 @@
 export const summary =
-  "使用 `continue` 跳过当前轮次、`break` 终止当前循环，以及使用命名标签 `outer: for (...)` 一次性跳出多层嵌套循环。";
+  "`continue` 是跳过这一轮，接着下一轮。`break` 是立刻离开当前这层循环。两层循环都要停的时候，可以给外层起个名字再跳出去。";
 
 export const keyPoints = [
-  "`continue` 立即进入下一轮循环迭代；`break` 立即退出所在的最内层循环或 `switch`。",
-  "当二维表格/矩阵查找命中第一个目标需要立即停止整个双层循环时，`break labelName;` 可以精准跳出外层循环。",
+  "`continue` 马上进入下一轮；`break` 马上离开最里面的那层循环或 `switch`。",
+  "在一张二维表里找到目标就该停。给外层循环起个标签，写 `break 标签名`，才能把两层一起跳出。",
 ];
 
 export const remember = [
-  "如果把双层循环封装成独立函数，直接 `return result;` 比写 `break outer;` 更直观。",
+  "如果这两层循环本来就是一个函数在干的事，找到了直接 `return`，比写 `break outer` 更好读。",
 ];
 
 export const taskDescription =
-  "findInMatrix(grid, target) 在二维表里找目标值第一次出现的位置，返回 { row, col }，行和列都从 0 开始。某一行如果不是数组，就跳过。都找不到就返回 null。找到以后就停，不要继续找。";
+  "写 `findInMatrix(grid, target)`，在二维表里找目标值第一次出现的位置，返回 `{ row, col }`，行和列都从 0 开始。某一行如果不是数组，就跳过。都找不到就返回 `null`。找到以后立刻停，不要继续往后找。";
 
 export async function runDemo(ctx) {
   const matrix = [

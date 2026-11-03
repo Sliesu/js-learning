@@ -1,17 +1,17 @@
 export const summary =
-  "理解传统构造函数、`Fn.prototype` 共享方法，以及 `new Fn(...args)` 在底层自动执行的四个步骤。";
+  "`new` 看起来只是一个关键字，背后其实做了固定的几步：先造对象，再拿这个对象当 `this` 去跑构造函数，最后决定返回谁。";
 
 export const keyPoints = [
-  "`new Fn(...args)` 的四步：1) 创建以 `Fn.prototype` 为原型的新对象 `instance`；2) 将 `this` 绑定到 `instance` 执行 `Fn`；3) 若 `Fn` 返回了一个非空对象则取该返回值，否则返回 `instance`。",
-  "在函数内部可通过 `new.target` 检测函数是否是通过 `new` 调用的。",
+  "`new Fn(...args)` 做这些事：造一个以 `Fn.prototype` 为原型的对象；把 `this` 指到它，执行 `Fn`；如果 `Fn` 返回了一个对象，就用那个返回值，否则用刚造的对象。",
+  "函数内部可以用 `new.target` 看自己是不是被 `new` 调用的。",
 ];
 
 export const remember = [
-  "把方法挂在 `Fn.prototype` 上可以让成千上万个实例共享同一个函数对象，而不是每个实例各自拷贝一份。",
+  "方法放在 `Fn.prototype` 上，所有实例共用同一个函数。不要在每个实例里各拷贝一份。",
 ];
 
 export const taskDescription =
-  "simulateNew(Constructor, ...args) 自己实现 new 的效果，函数里面不要写 new。先根据构造函数的原型创建一个新对象，再让构造函数在这个对象上执行。如果构造函数返回了对象或函数，就用那个返回值。否则用你创建出来的对象。";
+  "写 `simulateNew(Constructor, ...args)`，自己做出 `new` 的效果，函数里面不要写 `new`。先按构造函数的原型造出一个对象，再让构造函数在这个对象上执行。如果构造函数返回了对象或函数，就用那个返回值，否则用你造出来的对象。";
 
 export async function runDemo(ctx) {
   function Product(title, price) {

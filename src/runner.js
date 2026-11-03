@@ -139,7 +139,7 @@ function renderDoc(lessonMod) {
     </ol>
     ${
       notes.length
-        ? `<aside class="note"><h3>写的时候留意</h3><ul>${notes.map((note) => `<li>${formatInlineCode(note)}</li>`).join("")}</ul></aside>`
+        ? `<aside class="note"><h3>注意点</h3><ul>${notes.map((note) => `<li>${formatInlineCode(note)}</li>`).join("")}</ul></aside>`
         : ""
     }
     <aside class="task"><h3>这题要你写</h3><p>${formatInlineCode(task)}</p></aside>
@@ -213,7 +213,7 @@ async function loadEditor(lessonMeta) {
   els.solutionFold.open = false;
   els.editor.value = localStorage.getItem(draftKey(lessonMeta.id)) ?? original;
   syncGutter();
-  showResult("idle", "写在右边。写完按「检查这题」，或者直接按 ⌘↵ / Ctrl+Enter。", []);
+  showResult("idle", "还没有检查。写完点上面的「检查这题」，或按 ⌘↵ / Ctrl+Enter。", []);
 }
 
 async function checkCurrentCode() {

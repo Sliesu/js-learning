@@ -1,17 +1,17 @@
 export const summary =
-  "使用 `TextEncoder` 与 `TextDecoder` 在 JS 字符串与 UTF-8 字节序列（`Uint8Array`）之间双向转换。";
+  "JavaScript 字符串不是字节。要发出去、要算文件有多大，看的是 UTF-8 字节。`TextEncoder` 负责编码，`TextDecoder` 负责解码回来。";
 
 export const keyPoints = [
-  "`new TextEncoder().encode(str)` 将字符串编码为 UTF-8 的 `Uint8Array`（1 个英文字符占 1 字节，1 个常见汉字占 3 字节，1 个四字节 Emoji 占 4 字节）。",
-  "`new TextDecoder('utf-8').decode(bytes)` 将 `Uint8Array` 或 `ArrayBuffer` 还原为 JS 字符串。",
+  "`new TextEncoder().encode(str)` 得到 UTF-8 的 `Uint8Array`。英文字母一般 1 个字节，常见汉字 3 个字节，一个四字节的表情是 4 个字节。",
+  "`new TextDecoder('utf-8').decode(bytes)` 把字节还原成字符串。",
 ];
 
 export const remember = [
-  "网络传输、加密哈希、文件大小限制看的是「UTF-8 字节长度（`byteLength`）」，而不是 `str.length`。",
+  "网络、哈希、文件大小限制看的是字节长度，不是 `str.length`。`length` 数的是 UTF-16 码元。",
 ];
 
 export const taskDescription =
-  "utf8ByteLength(str) 返回一段文本按 UTF-8 编码后占用多少字节。汉字通常不止 1 个字节。roundTripUtf8(uint8Bytes) 把一组 UTF-8 字节解码还原成原来的文本。";
+  "写 `utf8ByteLength(str)`，返回这段文本按 UTF-8 编码后占多少字节。汉字通常不止 1 个字节。再写 `roundTripUtf8(uint8Bytes)`，把一组 UTF-8 字节解码还原成原来的文本。";
 
 export async function runDemo(ctx) {
   const bytes = new TextEncoder().encode("你好JS");

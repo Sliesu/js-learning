@@ -1,18 +1,18 @@
 export const summary =
-  "掌握正则表达式字面量、标志位（`g`、`i`、`u`）、命名捕获组 `(?<name>...)` 与转义用户输入 `RegExp.escape`（及兼容回退写法）。";
+  "正则用来从一段文本里把你要的部分抠出来。给捕获组起名字，读结果时就不用去数第几个括号。用户输入进正则之前，先把特殊字符转义。";
 
 export const keyPoints = [
-  "命名捕获组 `/(?<key>\\w+)=(?<val>\\w+)/` 让匹配结果的 `match.groups` 直接变成可读的对象 `{ key, val }`，告别数括号下标。",
-  "配合 `str.matchAll( globalRegex )` 可以一次性提取字符串中所有匹配项及其命名组。",
-  "将用户输入的动态文本拼进 `new RegExp(...)` 前必须转义正则元字符：优先用标准 `RegExp.escape`，若旧环境无此方法则用 `.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')`。",
+  "写成 `/(?<key>\\w+)=(?<val>\\w+)/` 之后，匹配结果的 `groups` 就是 `{ key, val }`，不用再记括号的顺序。",
+  "`matchAll` 可以一次取出所有匹配。它要求正则带 `g`，否则会抛 `TypeError`。",
+  "把用户输入拼进 `new RegExp` 之前，特殊字符要转义。有 `RegExp.escape` 就用它；老环境没有的话，再自己替换那些元字符。",
 ];
 
 export const remember = [
-  "`str.matchAll(re)` 要求正则必须带 `g` 标志，否则会抛出 `TypeError`。",
+  "`matchAll` 忘了加 `g`，不会静默失败，而是直接抛错。",
 ];
 
 export const taskDescription =
-  "parseLogKeyValues(msg) 解析一行日志。\"user=u1 action=login\" 要变成 { user: \"u1\", action: \"login\" }。一行里有好几对，就全部留下。";
+  "写 `parseLogKeyValues(msg)`，解析一行日志。`\"user=u1 action=login\"` 要变成 `{ user: \"u1\", action: \"login\" }`。一行里有好几对，就全部留下。";
 
 export async function runDemo(ctx) {
   const re = /(?<k>\w+)=(?<v>\w+)/g;

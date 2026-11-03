@@ -1,17 +1,17 @@
 export const summary =
-  "使用高精度时间戳 `performance.now()` 测量并对比两种算法实现（如 `Array.includes` 线性查找 vs `Set.has` 哈希查找）的耗时与输出一致性。";
+  "两种写法谁更快，用 `performance.now()` 量，不要靠感觉。比速度之前，先确认两种写法的结果是一样的。";
 
 export const keyPoints = [
-  "`performance.now()` 返回带小数的高精度毫秒数，不受系统时钟回拨影响，专用于性能基准测量。",
-  "优化性能的前提是两种写法产生的结果必须完全一致（`isDeepEqual`）。",
+  "`performance.now()` 返回高精度的毫秒数，不受系统时钟被改来改去的影响，专门用来量一段代码花了多久。",
+  "结果不一致的两份实现，快也没有意义。先看输出是不是一样，再看耗时。",
 ];
 
 export const remember = [
-  "数据量在几十条以内时可读性优先；数据量上千且存在嵌套查找时，用 `Set` / `Map` 将 \\(O(n^2)\\) 优化为 \\(O(n)\\)。",
+  "只有几十条数据时，先把代码写清楚。数据上千、里面还有嵌套查找，再用 `Set` 或 `Map` 把反复扫描换成一次查找。",
 ];
 
 export const taskDescription =
-  "benchmarkComparison(fnA, fnB, input) 用 performance.now() 分别测量两个函数处理同一份 input 花了多长时间。两个函数都要实际运行。返回 { resultA, resultB, durationAMs, durationBMs }。";
+  "写 `benchmarkComparison(fnA, fnB, input)`，用 `performance.now()` 分别量两个函数处理同一份 `input` 花了多久。两个函数都要实际运行。返回 `{ resultA, resultB, durationAMs, durationBMs }`。";
 
 export async function runDemo(ctx) {
   const t0 = performance.now();

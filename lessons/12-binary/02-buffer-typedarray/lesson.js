@@ -1,18 +1,18 @@
 export const summary =
-  "理解原始内存缓冲区 `ArrayBuffer`、定型数组视图 `Uint8Array` / `Int32Array` 以及跨字节序读写视图 `DataView`。";
+  "`ArrayBuffer` 是一段固定长度的内存，不能直接用下标读写。要套上一层视图：定型数组，或者能指定字节序的 `DataView`。";
 
 export const keyPoints = [
-  "`new ArrayBuffer(byteLength)` 分配一段固定长度的连续二进制内存，但不能直接下标读写，必须套一层视图（`TypedArray` 或 `DataView`）。",
-  "多个视图可以指向同一个 `ArrayBuffer` 的不同偏移区间，修改其中一个视图会直接反映在底层内存上。",
-  "`DataView` 允许显式控制大端序（Big-Endian，网络字节序，`littleEndian = false`）或小端序读写混合类型二进制协议头。",
+  "`new ArrayBuffer(字节数)` 只是分配内存。读写要经过 `Uint8Array`、`Int32Array` 或 `DataView`。",
+  "几个视图可以看着同一段内存的不同位置。改其中一个，底层的字节就变了，别的视图也能看见。",
+  "`DataView` 可以按大端或小端读写。网络上的字节序通常是大端，也就是 `littleEndian` 传 `false`。",
 ];
 
 export const remember = [
-  "解析自定义二进制包头（如 2 字节版本号 + 4 字节长度）时使用 `DataView`。",
+  "自己定的二进制头，比如 2 字节版本号再加 4 字节长度，用 `DataView` 来写、来读。不要靠普通数组去拼字节。",
 ];
 
 export const taskDescription =
-  "packHeader(version, payloadLength) 打包一个 6 字节的报文头，字节顺序用大端序。前 2 个字节写 version，后 4 个字节写 payloadLength。返回 Uint8Array。";
+  "写 `packHeader(version, payloadLength)`，打包一个 6 字节的报文头，用大端序。前 2 个字节写 `version`，后 4 个字节写 `payloadLength`。返回 `Uint8Array`。";
 
 export async function runDemo(ctx) {
   const buf = new ArrayBuffer(4);

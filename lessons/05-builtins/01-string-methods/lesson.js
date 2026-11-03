@@ -1,18 +1,18 @@
 export const summary =
-  "熟练使用字符串清洗与提取高频方法：`trim`、`startsWith`、`endsWith`、`includes`、`padStart`、`slice`、`split`、`replaceAll`、`matchAll`。";
+  "整理字符串，几乎都有现成方法：去空白、替换、补零、截取。它们都不会改原来的字符串，记得接住返回值。";
 
 export const keyPoints = [
-  "`str.replaceAll(search, replacement)` 无需写全局正则即可替换全部子串。",
-  "`str.padStart(targetLen, '0')` 常用于生成固定位数的编号（如 `'42'.padStart(5, '0') === '00042'`）或时间补零。",
-  "`str.slice(start, end)` 支持负数索引（从末尾倒数），比 `substring` 更一致。",
+  "`replaceAll` 能换掉所有相同的子串，不用再写一个全局正则。",
+  "`padStart` 用来补到固定位数，比如 `'42'.padStart(5, '0')` 得到 `'00042'`。日期、编号补零都靠它。",
+  "`slice(start, end)` 支持负数，从末尾往回数。比 `substring` 更好记。",
 ];
 
 export const remember = [
-  "所有字符串方法都不会改动原字符串，记得接收返回值。",
+  "字符串的方法都不会改原来那一份。你得用它的返回值，不然等于白调用。",
 ];
 
 export const taskDescription =
-  "maskPhone(raw) 给手机号打码。先去掉首尾空格和里面所有的 \"-\"。然后保留前 3 位和后 4 位，中间换成 ****。\"138-1234-5678\" 的结果是 \"138****5678\"。";
+  "写 `maskPhone(raw)`，给手机号打码。先去掉首尾空格，再去掉里面所有的 `\"-\"`。然后保留前 3 位和后 4 位，中间换成 `****`。`\"138-1234-5678\"` 的结果是 `\"138****5678\"`。";
 
 export async function runDemo(ctx) {
   const code = "7".padStart(4, "0");

@@ -1,18 +1,18 @@
 export const summary =
-  "熟练使用可选链 `?.`（属性、下标、方法调用）与空值合并 `??`（仅对 `null`/`undefined` 生效，不误伤 `0` 和 `''`），以及逻辑赋值 `??=`、`||=`、`&&=`。";
+  "一层层往下取属性时，中间可能是空的。`?.` 遇到 `null` 或 `undefined` 就停，返回 `undefined`，而不是抛错。给数字设默认值时，用 `??`，不要用 `||`，不然 `0` 会被当成没填。";
 
 export const keyPoints = [
-  "`user?.address?.city`、`arr?.[0]`、`obj.callback?.()` 在遇到 `null` 或 `undefined` 时立即短路返回 `undefined`，不会抛 `TypeError`。",
-  "`count || 10` 在 `count === 0` 时会错误地变成 `10`！而 `count ?? 10` 只在 `count` 为 `null` 或 `undefined` 时才取 `10`，完整保留 `0`、`false`、`''`。",
-  "`config.timeout ??= 3000` 等价于当 `config.timeout` 为 `null`/`undefined` 时才赋默认值 `3000`。",
+  "`user?.address?.city`、`arr?.[0]`、`obj.callback?.()` 遇到 `null` 或 `undefined` 就停下来，返回 `undefined`，不会抛 `TypeError`。",
+  "`count || 10` 在 `count` 是 0 时会变成 10。`count ?? 10` 只在 `null` 或 `undefined` 时才用 10，`0`、`false`、空字符串都会留着。",
+  "`config.timeout ??= 3000` 的意思是：这一项还没填，才写成 3000。",
 ];
 
 export const remember = [
-  "给数字或布尔配置项设默认值时，一律用 `??` 而不是 `||`。",
+  "数字、布尔值的默认值用 `??`，不要用 `||`。`0` 和 `false` 往往是有效输入。",
 ];
 
 export const taskDescription =
-  "readShippingFee(order) 读取订单上的运费，位置在 order.delivery.fee。订单或配送信息可能不存在。这一栏没填时返回 12。如果明确写了 0，那就是免运费，必须返回 0，不能把它当成没填。";
+  "写 `readShippingFee(order)`，读取订单上的运费，位置在 `order.delivery.fee`。订单或配送信息可能不存在。这一栏没填时返回 12。如果明确写了 0，那就是免运费，必须返回 0，不能把它当成没填。";
 
 export async function runDemo(ctx) {
   const freeOrder = { delivery: { fee: 0 } };

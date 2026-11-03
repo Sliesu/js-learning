@@ -1,17 +1,18 @@
 export const summary =
-  "使用属性简写 `{ id, name }`、方法简写 `{ run() {} }` 与计算属性名 `{ [keyExpr]: value }` 高效构造数据对象。";
+  "造对象的时候，名字和变量一样就可以简写。名字要现算出来，就把表达式放进方括号。方法也可以直接写在对象里面。";
 
 export const keyPoints = [
-  "当变量名与对象属性名一致时，`{ id: id, name: name }` 可直接简写为 `{ id, name }`。",
-  "计算属性名 `{ [`tier_${tier}`]: count }` 允许在字面量内部直接用任意表达式作为键名。",
+  "变量名和属性名一样时，`{ id: id, name: name }` 写成 `{ id, name }` 就行。",
+  "方法可以写成 `{ describe() { ... } }`，不必再写 `describe: function () {}`。",
+  "名字要算出来时，写成 `{ [`tier_${tier}`]: count }`。方括号里可以放任意表达式。",
 ];
 
 export const remember = [
-  "把数组转为以某个字段为键的字典时，计算属性名或动态赋键是高频操作。",
+  "把数组做成「以某个字段为键」的对照表时，计算属性名，或者先建对象再赋值，都是很常见的写法。",
 ];
 
 export const taskDescription =
-  "createKeyedRecord(keyPrefix, id, value) 返回一个对象。里面要有 id，还要有一个字段，字段名是「前缀_单号」，值是 value。再加一个 describe() 方法，返回「单号:值」。单号是 A1、值是 20 时，describe() 返回 \"A1:20\"。";
+  "写 `createKeyedRecord(keyPrefix, id, value)`，返回一个对象。里面要有 `id`，还要有一个字段，字段名是「前缀_单号」，值是 `value`。再加一个 `describe()` 方法，返回「单号:值」。单号是 A1、值是 20 时，`describe()` 返回 `\"A1:20\"`。";
 
 export async function runDemo(ctx) {
   const field = "city";

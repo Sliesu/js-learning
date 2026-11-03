@@ -1,17 +1,17 @@
 export const summary =
-  "使用 Web Streams API（`ReadableStream`、`getReader()`）分块产生和消费数据流，无需等全部数据到齐即可边读边处理。";
+  "数据很大时，不必等全部到齐再处理。`ReadableStream` 让你一块一块地生产和读取。";
 
 export const keyPoints = [
-  "`new ReadableStream({ start(controller) { controller.enqueue(chunk); controller.close(); } })` 创建一个可读流。",
-  "通过 `const reader = stream.getReader()` 循环调用 `const { value, done } = await reader.read()` 逐块消费。",
+  "创建可读流时，在 `start` 里用 `controller.enqueue(chunk)` 放入一块，结束时调用 `controller.close()`。",
+  "消费时用 `stream.getReader()`，循环 `await reader.read()`。`done` 为 true 就读完了，否则处理这一块 `value`。",
 ];
 
 export const remember = [
-  "`fetch` 的响应体 `res.body` 就是一个 `ReadableStream`，适合流式解析超长日志或大体积 NDJSON。",
+  "`fetch` 响应的 `res.body` 就是一个可读流。超长日志可以边读边处理，不用先拼成一个巨大的字符串。",
 ];
 
 export const taskDescription =
-  "consumeUppercaseStream(chunks) 把一组字符串放进 ReadableStream，然后再读出来。每一块都转成大写，按原来的顺序拼成一个完整字符串并返回。";
+  "写 `consumeUppercaseStream(chunks)`，把一组字符串放进 `ReadableStream`，再读出来。每一块都转成大写，按原来的顺序拼成一个完整字符串并返回。";
 
 export async function runDemo(ctx) {
   const stream = new ReadableStream({

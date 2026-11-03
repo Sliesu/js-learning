@@ -1,18 +1,18 @@
 export const summary =
-  "理解 `Promise` 的三种状态（`pending`、`fulfilled`、`rejected` 一旦敲定永不改变）以及 `.then()`、`.catch()`、`.finally()` 的链式值传递。";
+  "Promise 有三种状态：进行中、成功、失败。一旦成功或失败，就不会再变。`.then` 每次都返回一个新的 Promise，把上一步的结果交给下一步。";
 
 export const keyPoints = [
-  "`.then(onFulfilled)` 每次都会返回一个全新的 Promise：若回调返回普通值 `x`，下一个 `.then` 收到 `x`；若回调返回另一个 Promise，外层会自动等待它敲定（展开/Unwrap）。",
-  "链条中任意一环抛出的异常或 reject，都会顺着链条向下跳过中间的 `onFulfilled`，直到被最近的 `.catch()` 捕获。",
-  "`.finally(cleanup)` 不接收结果参数，且默认透传原有的成功值或失败原因。",
+  "`.then` 里的函数如果返回一个普通值，下一个 `.then` 就收到它。如果返回的是另一个 Promise，外面会等那个 Promise 有结果再继续。",
+  "链上任何一环抛错或失败，都会跳过后面的成功回调，直到被某个 `.catch` 接住。",
+  "`.finally` 不接收成功值或失败原因，它跑完以后，原来的成功或失败还会继续往下传。",
 ];
 
 export const remember = [
-  "在 `.then` 链中千万别忘了写 `return` 把处理结果传给下一环。",
+  "`.then` 里算完了一定要 `return`。忘了返回，下一步拿到的是 `undefined`。",
 ];
 
 export const taskDescription =
-  "chainOrderTransform(orderPromise) 等订单数据到达后计算总金额。每一行是 qty 乘 unitPrice。订单没有 items 时，按空数组算。总金额大于 0，返回 { id: 订单的 id, total }。总金额小于等于 0，或者计算过程出错，都不要把错误抛出去，返回 { id: \"fallback\", total: 0 }。";
+  "写 `chainOrderTransform(orderPromise)`，等订单到了以后计算总金额。每一行是 `qty` 乘 `unitPrice`。订单没有 `items` 时，按空数组算。总金额大于 0，返回 `{ id: 订单的 id, total }`。总金额小于等于 0，或者中途出错，都不要把错误抛出去，返回 `{ id: \"fallback\", total: 0 }`。";
 
 export async function runDemo(ctx) {
   const res = await Promise.resolve(10)

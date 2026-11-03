@@ -1,17 +1,17 @@
 export const summary =
-  "综合实战二：构建带「远程接口优先 + 超时/异常自动回退本地数据集」的高可用数据管道，确保无论联网与否脚本都能完成计算。";
+  "外面的接口会失败、会超时、也会返回空。先试远程名单，不行就改用本地数据。后面的筛选和统计不用关心数据是从哪来的。";
 
 export const keyPoints = [
-  "生产环境脚本访问外部接口时，必须考虑离线、DNS 失败、HTTP 5xx 或响应超时。",
-  "将数据源获取抽象为 `try { return { source: 'remote', list: await remoteFetcher() }; } catch { return { source: 'local-fallback', list: await ctx.fetchJson('data/users.json') }; }`，下游的数据清洗与统计管道代码完全复用。",
+  "远程可能离线、解析失败，或者返回的根本不是一份有内容的数组。这些都要当成「这次远程不能用」。",
+  "取数这一层负责决定用远程还是本地，并标上来源。后面的筛选只看那份列表，两边共用同一套计算。",
 ];
 
 export const remember = [
-  "数据源适配层（Adapter）与业务计算层（Pipeline）分离，是编写健壮脚本的终极心法。",
+  "取数和计算分开。接口换了、或者多了一种备用来源，计算那一段不用改。",
 ];
 
 export const taskDescription =
-  "runResilientUserPipeline(ctx, remoteFetcher) 优先使用远程用户名单。如果 remoteFetcher() 返回了非空数组，来源记为 \"remote\"。如果它抛出错误、返回的不是数组，或者数组是空的，就改用 data/users.json，来源记为 \"fallback\"。最后只保留 active 不是 false 的用户。返回 { source, activeCount, names }。names 是这些用户的姓名，activeCount 是姓名的数量。";
+  "写 `runResilientUserPipeline(ctx, remoteFetcher)`。优先用远程用户名单：如果 `remoteFetcher()` 返回了非空数组，来源记为 `\"remote\"`。如果它抛出错误、返回的不是数组，或者数组是空的，就改用 `data/users.json`，来源记为 `\"fallback\"`。最后只保留 `active` 不是 false 的用户。返回 `{ source, activeCount, names }`。`names` 是这些用户的姓名，`activeCount` 是人数。";
 
 export async function runDemo(ctx) {
   let source = "remote";

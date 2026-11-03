@@ -1,19 +1,19 @@
 export const summary =
-  "全面掌握 `Promise.all`、`Promise.allSettled`、`Promise.race`、`Promise.any`、`Promise.withResolvers()` 与 `Promise.try()`。";
+  "一批 Promise 要一起等的时候，先想清楚：是要全部成功，还是允许有的失败，还是谁先完成就用谁。选错方法，一个失败就会把其他结果一起丢掉。";
 
 export const keyPoints = [
-  "`Promise.all(tasks)`：全部成功才返回结果数组；只要有一个失败立即 reject。",
-  "`Promise.allSettled(tasks)`：永不 reject，等待全部敲定后返回 `{ status: 'fulfilled', value } | { status: 'rejected', reason }` 数组，适合批量任务统计成功与失败。",
-  "`Promise.any(tasks)`：取第一个 fulfilled 的结果（全部失败才抛 `AggregateError`）；而 `Promise.race` 取第一个敲定（无论成功或失败）。",
-  "`Promise.withResolvers()` 直接解构出 `{ promise, resolve, reject }`；`Promise.try(fn)` 将同步抛错或异步返回统一包装成 Promise。",
+  "`Promise.all`：全部成功才给你结果数组。有一个失败，整个就失败。",
+  "`Promise.allSettled`：一个都不拒绝。全部结束以后，每一项都会告诉你是成功还是失败，适合做汇总。",
+  "`Promise.any` 取第一个成功的；全部失败才抛 `AggregateError`。`Promise.race` 取第一个有结果的，成功或失败都算。",
+  "`Promise.withResolvers()` 直接给你 `{ promise, resolve, reject }`。`Promise.try(fn)` 把「同步就抛错」和「返回 Promise」统一包成 Promise。",
 ];
 
 export const remember = [
-  "批量请求允许部分失败时用 `Promise.allSettled`；多镜像源竞速取最快可用结果时用 `Promise.any`。",
+  "允许部分失败，用 `Promise.allSettled`。好几个地址抢同一个结果、用最快的那个，用 `Promise.any`。",
 ];
 
 export const taskDescription =
-  "collectSettledSummary(promises) 等待这一批 Promise 全部结束。其中有的失败了，也不要丢掉已经成功的。返回 { values, errors }。values 是成功的值，errors 是失败原因的 message。两组都保持原来的顺序。";
+  "写 `collectSettledSummary(promises)`，等这一批 Promise 全部结束。其中有的失败了，也不要丢掉已经成功的。返回 `{ values, errors }`。`values` 是成功的值，`errors` 是失败原因的 `message`。两组都保持原来的顺序。";
 
 export async function runDemo(ctx) {
   const settled = await Promise.allSettled([

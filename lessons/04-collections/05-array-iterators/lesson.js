@@ -1,18 +1,18 @@
 export const summary =
-  "精通数组核心高阶方法：`map`、`filter`、`reduce`、`find`、`some`、`every`、`flat`、`flatMap`。";
+  "处理一组数据时，少写循环，多用这几个方法：转换用 `map`，筛选用 `filter`，汇总成一个结果用 `reduce`。它们都返回新值，不改原数组。";
 
 export const keyPoints = [
-  "`map` 一对一转换；`filter` 按布尔谓词筛选；`flatMap` 先 `map` 再拍平一层（适合把订单数组展平为所有订单项明细）。",
-  "`reduce(fn, initialValue)` 务必始终传入第二个参数 `initialValue`（如 `0`、`{}`、`[]`），防止空数组调用时直接抛 `TypeError`。",
-  "`some` 只要有一项满足即短路返回 `true`；`every` 所有项都满足才返回 `true`（注意空数组 `.every(...)` 恒为 `true`）。",
+  "`map` 是一项变一项。`filter` 按条件留下一些。`flatMap` 是先变、再拍平一层，适合把「订单里的每一行」摊成一份明细。",
+  "`reduce` 一定要传第二个参数，也就是初值，比如 `0`、`{}` 或 `[]`。空数组又不给初值，会直接抛错。",
+  "`some` 只要有一项满足就返回 true，后面不再看。`every` 要每一项都满足才是 true。空数组调用 `every`，结果恒为 true。",
 ];
 
 export const remember = [
-  "这批方法全部返回新值，不会修改原数组本身。",
+  "`map`、`filter`、`reduce` 这些方法都返回新值，原来的数组还是原来的样子。",
 ];
 
 export const taskDescription =
-  "calcPaidItemsRevenue(orders) 只统计已经支付的订单。status 不是 \"paid\" 的整单跳过。已支付订单里，每一行金额是数量 qty 乘单价 unitPrice。把这些金额加起来返回。";
+  "写 `calcPaidItemsRevenue(orders)`，只统计已经支付的订单。`status` 不是 `\"paid\"` 的整单跳过。已支付订单里，每一行金额是数量 `qty` 乘单价 `unitPrice`。把这些金额加起来返回。";
 
 export async function runDemo(ctx) {
   const sampleOrders = [

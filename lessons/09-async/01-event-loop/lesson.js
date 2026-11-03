@@ -1,17 +1,17 @@
 export const summary =
-  "理解单线程调用栈（Call Stack）、微任务队列（Microtask Queue：`Promise.then`、`queueMicrotask`）与宏任务队列（Task Queue：`setTimeout`）的铁律执行顺序。";
+  "JavaScript 一次只做一件事。当前这段同步代码跑完，才会去清空微任务，然后才轮到 `setTimeout` 这类宏任务。顺序错了，日志和界面更新都会让你看不懂。";
 
 export const keyPoints = [
-  "执行顺序铁律：1) 先把当前同步代码（调用栈）全部执行到底；2) 清空当前所有微任务（包括微任务期间新排入的微任务）；3) 从宏任务队列取一个宏任务执行，再清空全部微任务，周而复始。",
-  "`Promise.resolve().then(fn)` 与 `queueMicrotask(fn)` 都进入微任务队列，永远比 `setTimeout(fn, 0)` 先执行。",
+  "顺序是固定的：先把当前同步代码跑完；再把现在排着的微任务全部做完，做的过程中新加的微任务也要清掉；然后取一个宏任务，做完再清一轮微任务。",
+  "`Promise.resolve().then(fn)` 和 `queueMicrotask(fn)` 都是微任务，永远排在 `setTimeout(fn, 0)` 前面。",
 ];
 
 export const remember = [
-  "排查异步问题就靠这条规律：同步代码 → 全部微任务 → 下一个宏任务。",
+  "异步结果对不上时，按这个顺序想：同步代码，然后全部微任务，然后下一个宏任务。",
 ];
 
 export const taskDescription =
-  "recordExecutionOrder() 返回一个 Promise，用来记录三段代码的先后顺序。最终结果必须是 [\"sync\", \"micro\", \"macro\"]。同步代码里放入 \"sync\"。Promise.resolve().then 里放入 \"micro\"。setTimeout 延迟 0 毫秒时放入 \"macro\"，然后把这个数组 resolve 出去。";
+  "写 `recordExecutionOrder()`，返回一个 Promise，记录三段代码谁先谁后。最终结果必须是 `[\"sync\", \"micro\", \"macro\"]`。同步代码里放入 `\"sync\"`。`Promise.resolve().then` 里放入 `\"micro\"`。`setTimeout` 延迟 0 毫秒时放入 `\"macro\"`，然后把这个数组 resolve 出去。";
 
 export async function runDemo(ctx) {
   const order = [];

@@ -1,18 +1,18 @@
 export const summary =
-  "掌握 `Object.defineProperty` 的属性描述符（`writable`、`enumerable`、`configurable`）以及对象防篡改三剑客：`Object.freeze`、`Object.seal`、`Object.preventExtensions`。";
+  "属性不只是一个值，它还可以被标成不能改、不能枚举、不能删除。想把整个对象锁住，用 `freeze`；只锁结构、还允许改值，用 `seal`。";
 
 export const keyPoints = [
-  "通过 `Object.defineProperty(obj, 'key', { value: 1, writable: false, enumerable: false })` 定义的属性默认不可写、不可枚举、不可删除。",
-  "`Object.seal(obj)` 禁止新增或删除属性，但允许修改已有可写属性的值。",
-  "`Object.freeze(obj)` 浅冻结：禁止新增、删除或修改第一层属性（严格模式下试图修改会直接抛 `TypeError`）。",
+  "用 `Object.defineProperty` 定义属性时，如果不写那些开关，默认是不可写、不可枚举、不可再配置。",
+  "`Object.seal` 之后不能再新增或删除属性，已经有的、并且可写的值还可以改。",
+  "`Object.freeze` 只冻住第一层：不能新增、删除，也不能改第一层的值。严格模式下硬改会抛 `TypeError`。里面的对象它不管。",
 ];
 
 export const remember = [
-  "`Object.freeze` 只冻结第一层；若要彻底锁定嵌套配置对象，需要递归调用 `Object.freeze`。",
+  "`Object.freeze` 不是深冻结。嵌套的对象要一起锁住，得自己递归下去，对每一层调用 `freeze`。",
 ];
 
 export const taskDescription =
-  "deepFreeze(obj) 把一个对象冻结，使它不能再被修改。里面嵌套的对象和数组也要一起冻结。处理完以后返回原来的 obj。null 和其他非对象不用管。";
+  "写 `deepFreeze(obj)`，把对象冻住，让它不能再被修改。里面嵌套的对象和数组也要一起冻住。处理完返回原来的 `obj`。`null` 和其他不是对象的值不用管。";
 
 export async function runDemo(ctx) {
   const cfg = Object.freeze({ env: "prod" });

@@ -1,17 +1,17 @@
 export const summary =
-  "综合实战一：并发拉取本地 `users.json`、`products.json`、`orders.json` 三张表，完成筛选、跨表关联与按品类/按城市经营指标汇总。";
+  "把前面学的合在一起：三份本地数据同时读出来，用 id 对上，只统计还在使用的客户和已支付的订单，再按品类和城市汇总。";
 
 export const keyPoints = [
-  "真实脚本任务往往需要同时关联「用户表 + 订单表 + 商品表」：先并发读取，再用 `Map` 构建 `userById` 和 `productById` 两个查找索引。",
-  "只统计活跃用户（`user.active === true`）且已支付（`order.status === 'paid'`）的有效订单。",
+  "用户、订单、商品互不依赖，一起读取。然后用 `Map` 做出 `userById` 和 `productById`，后面就按 id 取。",
+  "只统计 `user.active === true` 的客户，以及 `status` 为 `\"paid\"` 的订单。金额按每一行的数量乘单价累加。",
 ];
 
 export const remember = [
-  "把数据获取（IO）与报表计算（纯函数）分层，代码结构最清晰。",
+  "读取数据是一回事，算报表是另一回事。把取数和纯计算分开，报表公式改起来不会碰到请求。",
 ];
 
 export const taskDescription =
-  "generateLocalBusinessReport(ctx) 生成一张经营报表。同时读取 data/users.json、data/products.json 和 data/orders.json。只统计仍在使用的客户，以及 status 为 \"paid\" 的订单。金额按每个商品行的 qty 乘 unitPrice 累加。返回 { totalRevenue, revenueByCategory, topCity }。分类使用商品的 category。topCity 是消费金额最高的城市，如果金额相同，就保留先统计到的城市。";
+  "写 `generateLocalBusinessReport(ctx)`，生成一张经营报表。同时读取 `data/users.json`、`data/products.json` 和 `data/orders.json`。只统计仍在使用的客户，以及 `status` 为 `\"paid\"` 的订单。金额按每个商品行的 `qty` 乘 `unitPrice` 累加。返回 `{ totalRevenue, revenueByCategory, topCity }`。分类用商品的 `category`。`topCity` 是消费金额最高的城市；金额相同的话，保留先统计到的那一座。";
 
 export async function runDemo(ctx) {
   const [users, products, orders] = await Promise.all([

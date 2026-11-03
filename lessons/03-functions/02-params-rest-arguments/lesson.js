@@ -1,18 +1,18 @@
 export const summary =
-  "掌握默认参数（仅当实参为 `undefined` 时触发）、剩余参数 `...rest`（真数组）以及与旧式 `arguments` 类数组对象的区别。";
+  "参数可以带默认值，多出来的参数也可以收集成一个真正的数组。默认值只在对方没传，或者传了 `undefined` 时才用上。";
 
 export const keyPoints = [
-  "默认参数 `function greet(tag = '普通')` 只有传入 `undefined` 或不传时才生效；若传入 `null` 或 `''`，不会触发默认值。",
-  "默认参数表达式每次调用时都会重新求值（如 `function append(item, list = [])` 每次调用都会新建一个独立数组）。",
-  "`...rest` 收集多余实参为一个真正的 `Array`，可直接调用 `.map`/`.reduce`；且必须放在形参列表最后。",
+  "`function greet(tag = '普通')` 的默认值，只在没传或者传入 `undefined` 时生效。传入 `null` 或 `''`，不会换成默认值。",
+  "默认值的表达式每次调用都会重新算一遍。`function append(item, list = [])` 每次都会新建一个数组，不会大家共用同一个。",
+  "`...rest` 把多出来的实参收集成真正的数组，可以直接 `.map`、`.reduce`。它必须放在参数列表的最后。",
 ];
 
 export const remember = [
-  "新代码一律用 `...args` 替代 `arguments`；箭头函数内部没有自己的 `arguments`。",
+  "新代码用 `...args`，不要再用 `arguments`。箭头函数里根本没有自己的 `arguments`。",
 ];
 
 export const taskDescription =
-  "calcWeightedSum(multiplier = 1, ...numbers) 先把后面传进来的数字加起来，再乘以系数。没有传系数时，系数按 1 计算。";
+  "写 `calcWeightedSum(multiplier = 1, ...numbers)`。先把后面传进来的数字加起来，再乘以系数。没写系数时，系数按 1 算。";
 
 export async function runDemo(ctx) {
   function demo(a = 10, ...rest) {

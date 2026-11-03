@@ -1,17 +1,17 @@
 export const summary =
-  "理解 Web Storage（`localStorage` / `sessionStorage`）只存储字符串的特性，封装带命名空间前缀与 JSON 序列化的安全存储工具。";
+  "`localStorage` 只能存字符串。你把对象直接放进去，读出来会是 `\"[object Object]\"`。存的时候用 `JSON.stringify`，读的时候用 `JSON.parse`，并且准备好解析失败。";
 
 export const keyPoints = [
-  "`localStorage.setItem(key, val)` 会把非字符串强制转成字符串（直接存对象会变成 `\"[object Object]\"`），因此读写结构化数据必须配合 `JSON.stringify` 与 `JSON.parse`。",
-  "将 `storage` 作为默认参数 `storage = globalThis.localStorage` 注入，既能在浏览器直接读写 `localStorage`，又方便测试时传入内存伪对象。",
+  "`setItem` 只认字符串。结构化数据要先 `JSON.stringify`，读出来再 `JSON.parse`。",
+  "把 `storage` 当成参数传进去，默认用 `localStorage`。测试时可以换一个内存里的假存储，不必真的写到浏览器。",
 ];
 
 export const remember = [
-  "读取 `localStorage` 时可能因数据被人为改动而解析报错，务必包裹 `try...catch` 并提供默认值。",
+  "用户或别的脚本可能改过 `localStorage` 里的内容，解析会失败。读的时候放进 `try...catch`，失败就返回你准备的默认值。",
 ];
 
 export const taskDescription =
-  "createJsonStore(prefix, storage) 返回 { save, load }，用来在本地保存 JSON。实际使用的键名是「前缀:键名」。save(key, value) 把值存成 JSON。load(key, fallback) 读取并解析。如果没有这一项，或者内容不是合法 JSON，就返回 fallback。没有传 fallback 时返回 null。";
+  "写 `createJsonStore(prefix, storage)`，返回 `{ save, load }`，用来在本地保存 JSON。实际使用的键名是「前缀:键名」。`save(key, value)` 把值存成 JSON。`load(key, fallback)` 读取并解析。如果没有这一项，或者内容不是合法 JSON，就返回 `fallback`。没传 `fallback` 时返回 `null`。";
 
 export async function runDemo(ctx) {
   const mem = new Map();

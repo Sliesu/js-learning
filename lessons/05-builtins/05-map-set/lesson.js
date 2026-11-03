@@ -1,18 +1,18 @@
 export const summary =
-  "精通 `Map`（任意类型键、保持插入顺序、高频增删）与 `Set`（O(1) 存在性查询、去重及 `union`/`intersection`/`difference` 集合运算）。";
+  "普通对象的键只能是字符串或 `Symbol`。键可能是别的东西、又要保持放入顺序、还要知道有多少项，用 `Map`。只要一份不重复的集合，用 `Set`。";
 
 export const keyPoints = [
-  "普通对象的键只能是字符串或 `Symbol`，而 `Map` 的键可以是对象、数字、函数等任意值，且通过 `map.size` 直接拿长度。",
-  "数组去重最快写法：`[...new Set(arr)]`。",
-  "ES2025 `Set` 原生支持集合运算：`setA.union(setB)`（并集）、`setA.intersection(setB)`（交集）、`setA.difference(setB)`（差集）。",
+  "`Map` 的键可以是对象、数字、函数。长度直接看 `map.size`。",
+  "数组去重，写成 `[...new Set(arr)]`。",
+  "较新的环境里，`Set` 可以直接做集合运算：`union` 是并集，`intersection` 是交集，`difference` 是只在前者里有的那些。",
 ];
 
 export const remember = [
-  "在两表关联或需要频繁按 `id` 查找时，先用 `new Map(list.map(u => [u.id, u]))` 建索引，把 \\(O(n^2)\\) 降为 \\(O(n)\\)。",
+  "要按 id 反复查找时，先建成 `new Map(list.map(u => [u.id, u]))`。不要在循环里一次次 `find`。",
 ];
 
 export const taskDescription =
-  "analyzeTagSets(tagsA, tagsB) 比较两份标签。common 是两边都有的，onlyInA 是只出现在第一份里的，all 是两份合起来的。重复标签只保留一次。";
+  "写 `analyzeTagSets(tagsA, tagsB)`，比较两份标签。`common` 是两边都有的，`onlyInA` 是只出现在第一份里的，`all` 是两份合起来、重复的只留一次。";
 
 export async function runDemo(ctx) {
   const a = new Set(["js", "json", "fetch"]);

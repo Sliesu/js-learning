@@ -1,17 +1,17 @@
 export const summary =
-  "理解浏览器异步对象数据库 `IndexedDB` 的核心概念：数据库版本（`onupgradeneeded`）、对象仓库（Object Store，指定主键 `keyPath`）、事务（Transaction）与按条件查询。";
+  "`localStorage` 又小又只能同步存字符串。数据多了、还要按条件查，用 `IndexedDB`。它的原始接口是回调，用的时候通常包成 Promise。";
 
 export const keyPoints = [
-  "相比 `localStorage`（5MB 同步字符串），`IndexedDB` 是异步、支持事务与二级索引的大容量结构化数据库。",
-  "`IndexedDB` 原生 API 基于事件回调（`req.onsuccess` / `req.onerror`），实战中通常先用 `new Promise` 包装成 `async/await` 形态。",
+  "`IndexedDB` 是异步的，支持事务，也能建索引，容量比 `localStorage` 大得多。",
+  "原生接口靠 `onsuccess` 和 `onerror`。实际写的时候先包成 Promise，再用 `async/await`。",
 ];
 
 export const remember = [
-  "创建对象仓库 `db.createObjectStore('orders', { keyPath: 'id' })` 只能在 `onupgradeneeded` 版本升级回调中执行。",
+  "创建对象仓库，比如 `db.createObjectStore('orders', { keyPath: 'id' })`，只能在版本升级的 `onupgradeneeded` 里做。平时的事务里做不了这件事。",
 ];
 
 export const taskDescription =
-  "putAndQueryByMinAmount(records, minAmount) 先按 id 保存这些记录。同一个 id 再次出现时，用后面的记录覆盖前面的。浏览器支持 indexedDB 就用它保存，不支持就用 Map。最后只保留 amount 大于等于 minAmount 的记录，并按 id 从小到大返回。";
+  "写 `putAndQueryByMinAmount(records, minAmount)`，先按 id 保存这些记录。同一个 id 再次出现时，用后面的记录盖住前面的。浏览器有 `indexedDB` 就用它，没有就用 `Map`。最后只保留 `amount` 大于等于 `minAmount` 的记录，并按 id 从小到大返回。";
 
 export async function runDemo(ctx) {
   const hasIdb = typeof globalThis.indexedDB !== "undefined";
