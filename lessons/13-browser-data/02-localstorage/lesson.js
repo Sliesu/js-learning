@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "柜员偏好存在本机，不同系统要用前缀隔开，存坏的数据不能让页面崩。请写 createJsonStore(prefix, storage)，返回 { save(key, value), load(key, fallback) }。实际用的键是「前缀:key」。save 把值存成 JSON。load 读出来再解析；这一项不存在，或者内容不是合法 JSON，就返回 fallback。没传 fallback 时用 null。";
+  "createJsonStore(prefix, storage) 返回 { save, load }，用来在本地保存 JSON。实际使用的键名是「前缀:键名」。save(key, value) 把值存成 JSON。load(key, fallback) 读取并解析。如果没有这一项，或者内容不是合法 JSON，就返回 fallback。没有传 fallback 时返回 null。";
 
 export async function runDemo(ctx) {
   const mem = new Map();

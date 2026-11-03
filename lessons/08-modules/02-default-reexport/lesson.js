@@ -14,7 +14,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "会员胸牌的格式和默认等级由另一个模块提供。请写 renderUserBadge(user)。用户有 tier 就用他的等级，没有就用模块里的默认等级 DEFAULT_TIER。然后把等级和 user.name 交给默认导出的 formatBadge，返回它生成的胸牌文字。";
+  "胸牌格式在 ./badge.js 里。renderUserBadge(user) 调用这个文件默认导出的 formatBadge。用户有等级 tier 就用用户自己的，没有就用文件里的 DEFAULT_TIER。把等级和 user.name 传进去，返回得到的文字。";
 
 export async function runDemo(ctx) {
   ctx.log("调用默认导出函数:", formatBadge(DEFAULT_TIER, "宋然"));

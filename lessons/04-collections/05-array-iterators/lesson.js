@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "只统计已经支付的订单赚了多少钱。请写 calcPaidItemsRevenue(orders)。订单里 status 不是 \"paid\" 的整单跳过。已支付订单的 items 全部摊开，每一行金额是 qty * unitPrice，最后返回这些金额的合计。";
+  "calcPaidItemsRevenue(orders) 只统计已经支付的订单。status 不是 \"paid\" 的整单跳过。已支付订单里，每一行金额是数量 qty 乘单价 unitPrice。把这些金额加起来返回。";
 
 export async function runDemo(ctx) {
   const sampleOrders = [

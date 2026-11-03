@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "税额算法已经写在旁边的税务模块里，开票时不要再抄一遍。请从 ./tax-helper.js 引入 calcTax，并导出 priceWithTax(amount)。含税价等于金额加上这笔金额算出的税额。";
+  "税额的算法已经在 ./tax-helper.js 的 calcTax 里。priceWithTax(amount) 返回金额加上这笔金额的税额。把 calcTax 从那个文件引进来用，不要自己重写税率。";
 
 export async function runDemo(ctx) {
   ctx.log("从 ./tax-helper.js 导入的 TAX_RATE:", TAX_RATE);

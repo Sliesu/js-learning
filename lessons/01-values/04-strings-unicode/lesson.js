@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "收银台要打一行小票：商品名、数量、金额。请写 formatOrderLine(title, qty, price)，例如「拿铁」、2、18 得到「拿铁 x2 = ¥36」。短信里的表情也算一个字。请写 countCodePoints(str)，「A🚀B」必须数成 3，不能把火箭拆成两个字。";
+  "formatOrderLine(title, qty, price) 拼一行小票。商品是「拿铁」、数量 2、单价 18，结果是「拿铁 x2 = ¥36」。countCodePoints(str) 数这段文字有几个字，表情也算一个。「A🚀B」是 3 个，不是 4 个。";
 
 export async function runDemo(ctx) {
   const rocket = "🚀";

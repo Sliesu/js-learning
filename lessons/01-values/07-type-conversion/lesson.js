@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "网银金额栏经常是文字，入账前要收成数字。请写 toStrictNumber(input)。已经是有限数字就原样返回。像 \" 42.5 \" 这种前后有空格的数字文字，去掉空白后能转成有限数字就返回那个数字。空白、纯空格、null、没填、true/false、\"abc\" 都不能入账，一律返回 null。不要把 true 当成 1，也不要把空字符串当成 0。";
+  "toStrictNumber(input) 把输入收成数字。本来就是正常数字，原样返回。\" 42.5 \" 这种带空格的文字，去掉空格后能转成数字，就返回那个数字。空白、null、true、false、\"abc\" 都返回 null。不要把 true 当成 1，也不要把空字符串当成 0。";
 
 export async function runDemo(ctx) {
   ctx.log("'10' + 5 =>", "10" + 5, "而 '10' - 5 =>", "10" - 5);

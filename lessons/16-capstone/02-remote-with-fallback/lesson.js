@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "客户名单优先用远程接口，接口失败或给空时改用本地档案，页面不能空着。请写 runResilientUserPipeline(ctx, remoteFetcher)。先等待 remoteFetcher()。结果是非空数组时，来源记为 \"remote\"。抛错、不是数组、或是空数组，都改读 data/users.json，来源记为 \"fallback\"。然后只统计 active 不是 false 的客户。返回 { source, activeCount, names }。names 是这些客户的姓名，activeCount 是 names 的长度。";
+  "runResilientUserPipeline(ctx, remoteFetcher) 优先使用远程用户名单。如果 remoteFetcher() 返回了非空数组，来源记为 \"remote\"。如果它抛出错误、返回的不是数组，或者数组是空的，就改用 data/users.json，来源记为 \"fallback\"。最后只保留 active 不是 false 的用户。返回 { source, activeCount, names }。names 是这些用户的姓名，activeCount 是姓名的数量。";
 
 export async function runDemo(ctx) {
   let source = "remote";

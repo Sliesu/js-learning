@@ -2,6 +2,6 @@
 export function attachHiddenMeta(record, metaVal) {
 }
 
-// 用同一把钥匙读出内部备注。
+// 用同一个 Symbol 读出内部备注。
 export function readHiddenMeta(record) {
 }

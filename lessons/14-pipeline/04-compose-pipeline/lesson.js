@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "日终步骤要能串成一条管道，上一步的结果就是下一步的输入。请写 pipe(...fns)，返回一个函数：从初始值开始，按从左到右的顺序同步执行每个函数。再写 pipeAsync(...fns)，同样从左到右，但每一步都等待完成后再交给下一步。";
+  "pipe(...fns) 把多个函数串起来。它返回一个新函数，从上一个函数的结果开始，按从左到右的顺序交给下一个函数。pipeAsync(...fns) 也是从左到右，但每一步都要等它完成，再把结果交给下一步。";
 
 export async function runDemo(ctx) {
   const pipe =

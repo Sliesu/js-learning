@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "会员导出文件是一段 JSON 文字。请写 exportActiveUserNames(usersJsonStr)。先解析这段文字，只保留 active 为 true 的会员，按原来的顺序返回他们的 name 数组。停用会员不要出现。";
+  "exportActiveUserNames(usersJsonStr) 解析一段会员 JSON。只保留 active 为 true 的会员，按原来的顺序返回他们的姓名。";
 
 export async function runDemo(ctx) {
   const users = await ctx.fetchJson("data/users.json");

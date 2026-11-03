@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "柜面把两笔存款记进同一个账户。0.10 元再加 0.20 元，余额必须正好是 0.30 元，不能多出一分钱。请写 addCurrency(a, b)：先把每一笔四舍五入成整数「分」，加总后再换回「元」。另外，风控规定单笔金额只能落在允许区间里。请写 clampNumber(val, min, max)：读到的值如果不是正常数字（NaN、无穷大），就按下限 min 入账；如果是正常数字，低于下限就用下限，高于上限就用上限。";
+  "addCurrency(a, b) 把两笔人民币加在一起。0.1 元加 0.2 元必须等于 0.3 元。先把每一笔四舍五入成「分」，加完再换回「元」。clampNumber(val, min, max) 把一个数限制在最小值和最大值之间。val 如果不是正常数字，比如 NaN 或无穷大，就返回最小值。";
 
 export async function runDemo(ctx) {
   ctx.log("0.1 + 0.2 直接相加:", 0.1 + 0.2);

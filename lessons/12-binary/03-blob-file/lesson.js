@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "对账结果要打包成一份 JSON 文件交给浏览器下载。请写 recordsToJsonBlob(records)，把数组变成 JSON 文字，放进类型为 application/json 的 Blob。收到这种文件时，请写 parseJsonBlob(blob)：先读出文字，再解析回原来的数据。";
+  "recordsToJsonBlob(records) 把数组变成 JSON 文字，放进一个 Blob，类型设为 application/json。parseJsonBlob(blob) 先把 Blob 里的文字读出来，再解析回原来的数据。";
 
 export async function runDemo(ctx) {
   const blob = new Blob([JSON.stringify({ hello: "world" })], { type: "application/json" });

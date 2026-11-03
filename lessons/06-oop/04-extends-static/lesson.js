@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "普通订单只按原价收。会员订单在原价上再乘自己的费率。下面已经有 BaseOrder。请写子类 VipOrder。constructor(id, amount, rate) 先按父类记下单号和金额，再记下 rate。finalAmount() 返回父类算出的金额再乘 rate。柜面还有一个快捷入口：VipOrder.halfPrice(id, amount) 直接生成费率为 0.5 的会员订单。";
+  "下面已经有 BaseOrder。请在它上面写子类 VipOrder。constructor(id, amount, rate) 先让父类记下单号和金额，再记下 rate。finalAmount() 用父类算出的金额乘上 rate。VipOrder.halfPrice(id, amount) 直接创建一个 rate 为 0.5 的会员订单。";
 
 export async function runDemo(ctx) {
   class Base {

@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "柜面有三种记账：加、减、乘。请写 runOperation(opName, a, b)。opName 为 \"add\" 时返回 a + b，\"sub\" 返回 a - b，\"mul\" 返回 a * b。操作名不认识就返回 null，不要瞎算。把这三个运算放进一个字典里再按名字调用。";
+  "runOperation(opName, a, b) 按名字做计算。\"add\" 是相加，\"sub\" 是相减，\"mul\" 是相乘。名字不认识就返回 null。把这三个计算放在一个对象里，再按名字取出调用。";
 
 export async function runDemo(ctx) {
   ctx.log("函数声明可在定义前调用:", hoistedDouble(6));

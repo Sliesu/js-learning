@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "开户表单里什么值都有，归档前要标出真实类型。请写 preciseType(value)。没填的 null 必须返回 \"null\"，不能再说成 object。客户的一组证件号是数组，返回 \"array\"。其余值返回 typeof 的结果，例如数字返回 \"number\"，文字返回 \"string\"。";
+  "preciseType(value) 说明一个值到底是什么类型。null 要返回 \"null\"，不能返回 \"object\"。数组返回 \"array\"。其他情况跟 typeof 一样：数字是 \"number\"，文字是 \"string\"。";
 
 export async function runDemo(ctx) {
   const samples = ["hello", 42, 10n, true, undefined, Symbol("id"), null, [1, 2], { a: 1 }];

@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "订单行的小计不能让人单独乱填，它永远等于单价乘数量。请写 createOrderLine(unitPrice, initialQty = 1)。返回的对象有 unitPrice、qty 和 subtotal。subtotal 读取时返回 unitPrice * qty。设置 qty 时，小于 0 要抛出 RangeError，消息是 \"qty cannot be negative\"，并且不要把数量改成负数。";
+  "createOrderLine(unitPrice, initialQty = 1) 创建一行订单。subtotal 不能单独修改，读取它时结果就是单价乘数量。qty 不能被设成负数。如果设成负数，抛出 RangeError，消息是 \"qty cannot be negative\"。";
 
 export async function runDemo(ctx) {
   const rect = {

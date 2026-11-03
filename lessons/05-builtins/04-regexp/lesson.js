@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "支付日志是一行字，不是表格，例如 \"user=u1 action=login\"。请写 parseLogKeyValues(msg)，把所有 key=value 提出来，返回普通对象 { user: \"u1\", action: \"login\" }。一行里有好几对时都要留下，值里不会有空格。";
+  "parseLogKeyValues(msg) 解析一行日志。\"user=u1 action=login\" 要变成 { user: \"u1\", action: \"login\" }。一行里有好几对，就全部留下。";
 
 export async function runDemo(ctx) {
   const re = /(?<k>\w+)=(?<v>\w+)/g;

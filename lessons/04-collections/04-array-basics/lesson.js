@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "生成一批期次号。请写 rangeStep(start, count, step = 1)，返回 count 个数：从 start 开始，每次加 step。例如从 10 起、要 3 个、步长 5，得到 [10, 15, 20]。导入的表格里还有空洞和没填的格子。请写 compactHoles(sparseArr)，丢掉空洞和 undefined，只留下真正有值的项。";
+  "rangeStep(start, count, step = 1) 生成一串数字。从 start 开始，一共 count 个，每次增加 step。从 10 开始、要 3 个、步长 5，结果是 [10, 15, 20]。compactHoles(sparseArr) 去掉数组里的空位和 undefined，只留下真正有值的项。";
 
 export async function runDemo(ctx) {
   const seq = Array.from({ length: 4 }, (_, i) => (i + 1) * 10);

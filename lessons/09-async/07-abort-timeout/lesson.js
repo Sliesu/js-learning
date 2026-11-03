@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "调用渠道不能无限等。请写 runWithTimeout(taskFn, timeoutMs)。把取消信号交给 taskFn(signal)。在时限内完成就返回它的结果，并清掉计时器。超时就取消这次调用，并拒绝为 Error，消息正好是 \"Timeout\"。";
+  "runWithTimeout(taskFn, timeoutMs) 给一次异步操作加上时间限制。把 signal 传给 taskFn(signal)。在限定时间内完成，就返回它的结果。超时就取消这次操作，并产生一个错误，错误消息是 \"Timeout\"。";
 
 export async function runDemo(ctx) {
   const ctrl = new AbortController();

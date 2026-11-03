@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "会计期间要能用 for...of 一个个取，但不必先生成整张数组。请写 createSteppedRange(start, end, step = 1)，返回一个可迭代对象。它从 start 开始，每次加 step，产出所有小于等于 end 的数。例如 1 到 5、步长 2，展开后是 [1, 3, 5]。";
+  "createSteppedRange(start, end, step = 1) 返回一个可以用 for...of 逐个取出的对象，不需要先生成完整数组。从 start 开始，每次加 step，直到不超过 end。createSteppedRange(1, 5, 2) 展开后是 [1, 3, 5]。";
 
 export async function runDemo(ctx) {
   const countdown = {

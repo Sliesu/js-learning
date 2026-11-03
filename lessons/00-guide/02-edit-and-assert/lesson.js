@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "柜员把两笔记到一张回单上。请写 buildPair(a, b)，返回一张回单：first 是第一笔，second 是第二笔，sum 是两笔相加。例如 3 和 4，sum 必须是 7。";
+  "buildPair(a, b) 把两个数收成一个对象。first 是第一个数，second 是第二个数，sum 是它们相加。3 和 4 的 sum 是 7。";
 
 export async function runDemo(ctx) {
   ctx.log("断言示例：Object.is(1 + 2, 3) =>", Object.is(1 + 2, 3));

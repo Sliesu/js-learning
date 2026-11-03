@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "日终统计模块比较重，只有真的要出报表时才加载。请写异步函数 loadAndComputeStats(nums)。用 await import(\"./lazy-stats.js\") 加载模块，再调用里面的 computeStats(nums)，把结果返回。";
+  "loadAndComputeStats(nums) 是一个异步函数。真的要计算时，再用 await import(\"./lazy-stats.js\") 加载那个模块，调用里面的 computeStats(nums)，把结果返回。";
 
 export async function runDemo(ctx) {
   const mod = await import("./lazy-stats.js");

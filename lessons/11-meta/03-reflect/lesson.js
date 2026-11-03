@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "审计要看一份档案上的全部自有钥匙，包括平时枚举看不见的，也包括 Symbol。请写 inspectAllOwnKeys(obj)，用 Reflect.ownKeys 返回这些钥匙。不要漏掉不可枚举属性和 Symbol 属性。";
+  "inspectAllOwnKeys(obj) 返回这个对象自己拥有的全部键，请使用 Reflect.ownKeys。普通遍历看不到的键，以及 Symbol 键，都要包含在内。";
 
 export async function runDemo(ctx) {
   const sym = Symbol("secret");

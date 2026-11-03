@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "购物车要能加商品、看总金额、看总件数。请写 ShoppingCart 类。addItem(title, price, qty = 1) 加进一件商品，没写件数时按 1 件。totalPrice() 返回所有「单价 × 件数」的合计。count() 返回件数合计，不是商品行数。";
+  "写一个 ShoppingCart 类。addItem(title, price, qty = 1) 往购物车里加商品，没写件数就按 1 件。totalPrice() 返回总金额，也就是每行的单价乘件数，再加起来。count() 返回总件数，不是商品有几行。";
 
 export async function runDemo(ctx) {
   class Counter {

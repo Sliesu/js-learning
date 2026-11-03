@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "监管要求记下余额对象的每一次修改。请写 createAuditedObject(initialObj)，返回 { proxy, history }。通过 proxy 给属性赋值时，先往 history 追加 { key, oldValue, newValue }，key 用字符串，oldValue 是改前的值，newValue 是新值。然后再真正写进原对象。直接改 initialObj 不算进 history。";
+  "createAuditedObject(initialObj) 返回 { proxy, history }。每次通过 proxy 修改属性，都先往 history 里加一条记录 { key, oldValue, newValue }，key 要转成字符串，然后再真正写入。直接修改原来的对象时，不要记入 history。";
 
 export async function runDemo(ctx) {
   const log = [];

@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "报文一块一块到达，展示前要转成大写再接成一条。请写 consumeUppercaseStream(chunks)。用 ReadableStream 把 chunks 逐块放进去并关闭。再把流读完，每块转成大写，按原顺序拼成一个字符串返回。";
+  "consumeUppercaseStream(chunks) 把一组字符串放进 ReadableStream，然后再读出来。每一块都转成大写，按原来的顺序拼成一个完整字符串并返回。";
 
 export async function runDemo(ctx) {
   const stream = new ReadableStream({

@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "客服导出的手机号里夹着空格和横线，上屏前要打码。请写 maskPhone(raw)。先去掉首尾空白和所有 \"-\"。然后只显示前 3 位和后 4 位，中间固定换成 ****。例如 \"138-1234-5678\" 得到 \"138****5678\"。";
+  "maskPhone(raw) 给手机号打码。先去掉首尾空格和里面所有的 \"-\"。然后保留前 3 位和后 4 位，中间换成 ****。\"138-1234-5678\" 的结果是 \"138****5678\"。";
 
 export async function runDemo(ctx) {
   const code = "7".padStart(4, "0");

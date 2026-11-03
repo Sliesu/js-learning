@@ -1,4 +1,4 @@
-// 返回点检结果：
+// 返回这五项：
 // hasGlobal：globalThis 是不是对象。
 // power：2 的 8 次方。
 // lastItem：nums 的最后一项。

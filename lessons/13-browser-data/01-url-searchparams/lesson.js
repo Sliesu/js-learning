@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "查询账户时，空条件不要出现在地址里。请写 buildQueryUrl(baseUrl, paramsObj)。从 baseUrl 做出 URL，只把值不是 null、也不是 undefined 的条件写进查询串，数值也转成文字。返回完整地址。";
+  "buildQueryUrl(baseUrl, paramsObj) 根据基础地址和查询条件，拼出完整地址。值为 null 或 undefined 的条件不要放进去，其他值转成字符串后再放入。";
 
 export async function runDemo(ctx) {
   const u = new URL("https://api.example.com/orders");

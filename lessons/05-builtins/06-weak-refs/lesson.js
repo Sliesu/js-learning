@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "同一张客户档案的评级结果要记住，但档案作废后缓存必须能被清掉，不能一直占着内存。请写 createObjectCache(computeFn)，返回一个函数。这个函数收到对象时：算过就直接给上次的结果；没算过才调用 computeFn(obj)，记住结果再返回。请用 WeakMap，键就是那份档案对象。";
+  "createObjectCache(computeFn) 返回一个函数，用来记住每个对象算出来的结果。同一个对象再次传进来时，直接返回上次的结果，不要重新计算。用 WeakMap 来存。对象不再使用以后，这份缓存也可以被清掉。";
 
 export async function runDemo(ctx) {
   const wm = new WeakMap();

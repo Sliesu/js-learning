@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "报文按字节计费，汉字不能按字符数计价。请写 utf8ByteLength(str)，返回这段文字编码成 UTF-8 后的字节数。对方回传的是字节。请写 roundTripUtf8(uint8Bytes)，把这些字节解回文字。";
+  "utf8ByteLength(str) 返回一段文字按 UTF-8 编码后占用多少字节。汉字通常不止 1 个字节。roundTripUtf8(uint8Bytes) 把一组 UTF-8 字节解回原来的文字。";
 
 export async function runDemo(ctx) {
   const bytes = new TextEncoder().encode("你好JS");

@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "大批流水不能一次交给下游。请写生成器 chunkGenerator(items, size)，按每批 size 笔往外给。例如 [1, 2, 3, 4, 5] 按 2 笔一批，依次给出 [1, 2]、[3, 4]、[5]。最后一批不足 size 也要给出去。";
+  "chunkGenerator(items, size) 用生成器把数据分成一批一批交出去。[1, 2, 3, 4, 5] 按每批 2 个，依次交出 [1, 2]、[3, 4]、[5]。最后剩下的不够一批，也要交出去。";
 
 export async function runDemo(ctx) {
   function* idMaker() {

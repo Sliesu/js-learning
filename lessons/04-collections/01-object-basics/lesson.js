@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "客户档案字段很多，给外包对账只许带走指定栏。请写 pickOwnFields(record, keys)，返回一个新对象，只复制 keys 里那些确实长在这份档案自己身上的字段。用 Object.hasOwn 判断。原型上同名的字段不要带走。";
+  "pickOwnFields(record, keys) 按给定的字段名，从档案里抄出一份新对象。只抄这份档案自己有的字段，用 Object.hasOwn 判断。原型上同名的字段不要抄。";
 
 export async function runDemo(ctx) {
   const user = { id: "u1", undefinedField: undefined };

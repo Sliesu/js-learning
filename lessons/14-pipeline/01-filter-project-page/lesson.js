@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "商品查询页只卖有库存、而且达到最低价的商品。请写 queryProducts(products, 条件)。默认最低价 0、第 1 页、每页 2 条。先留下 price 大于等于最低价且 stock 大于 0 的商品。按价格从高到低，价格相同按 id 从小到大。total 是筛选后的总条数，不是当前页条数。items 只取当前页，每条只留 { id, title, price }。返回 { total, items }。";
+  "queryProducts(products, 条件) 查询可卖的商品。默认最低价是 0，页码是 1，每页 2 条。只保留价格不低于最低价、并且库存大于 0 的商品。先按价格从高到低排，价格相同再按 id 从小到大排。返回 { total, items }。total 是筛选后的总条数，items 是当前这一页，每条只保留 id、title 和 price。";
 
 export async function runDemo(ctx) {
   const products = await ctx.fetchJson("data/products.json");

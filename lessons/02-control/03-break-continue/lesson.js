@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "清算文件是一张表套一张表。请写 findInMatrix(grid, target)，找出目标金额第一次出现的位置，返回 { row, col }，行列都从 0 开始。某一行如果不是数组，是废行，跳过继续找。整张表都没有，返回 null。找到第一次就停，不要再往下扫。";
+  "findInMatrix(grid, target) 在二维表里找目标值第一次出现的位置，返回 { row, col }，行和列都从 0 开始。某一行如果不是数组，就跳过。都找不到就返回 null。找到以后就停，不要继续找。";
 
 export async function runDemo(ctx) {
   const matrix = [

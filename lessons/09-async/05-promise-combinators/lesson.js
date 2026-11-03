@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "一批扣款要全部等完，其中一笔失败不能把成功的结果丢掉。请写 collectSettledSummary(promises)。等待每一个 Promise 结束。返回 { values, errors }：values 是成功值，按完成结果里的原顺序；errors 是失败原因的 message，同样按原顺序。";
+  "collectSettledSummary(promises) 等待这一批 Promise 全部结束。其中有的失败了，也不要丢掉已经成功的。返回 { values, errors }。values 是成功的值，errors 是失败原因的 message。两组都保持原来的顺序。";
 
 export async function runDemo(ctx) {
   const settled = await Promise.allSettled([

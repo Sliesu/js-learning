@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "两种计息写法都要跑一遍，并记下各自花了多久。请写 benchmarkComparison(fnA, fnB, input)。用 performance.now() 分别测量 fnA(input) 和 fnB(input)。返回 { resultA, resultB, durationAMs, durationBMs }。两个结果都要真的算出来，耗时不能写死。";
+  "benchmarkComparison(fnA, fnB, input) 用 performance.now() 分别测量两个函数处理同一份 input 花了多长时间。两个函数都要实际运行。返回 { resultA, resultB, durationAMs, durationBMs }。";
 
 export async function runDemo(ctx) {
   const t0 = performance.now();

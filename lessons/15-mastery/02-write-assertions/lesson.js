@@ -10,7 +10,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "折扣函数上线前要有三张验收单。请写 verifyDiscountFn(discountFn, assert)。用 assert.equal 确认 discountFn(200, 0.8) 等于 160，discountFn(0, 0.5) 等于 0。用 assert.throws 确认 discountFn(100, 1.5) 会抛出 RangeError。费率大于 1 或小于等于 0 都不允许。";
+  "verifyDiscountFn(discountFn, assert) 为折扣函数写三项检查。discountFn(200, 0.8) 应该等于 160，discountFn(0, 0.5) 应该等于 0，这两项用 assert.equal。discountFn(100, 1.5) 应该抛出 RangeError，这一项用 assert.throws。";
 
 export async function runDemo(ctx) {
   ctx.log("自己动手写断言：验证正常计算、0 值边界与非法折扣率异常");

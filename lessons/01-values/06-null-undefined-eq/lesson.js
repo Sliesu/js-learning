@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "网银里「这栏没填」和「客户故意填了 0 或空字符串」不是一回事。请写 isNullish(val)：只有 null 或 undefined 返回 true，0 和 \"\" 必须返回 false。对账还要判断两条记录是不是完全同一笔。请写 sameValue(a, b)，用 Object.is 比较。这样两个 NaN 算同一笔异常，+0 和 -0 不算同一个余额方向。";
+  "isNullish(val) 判断这个值是不是「没填」。只有 null 和 undefined 返回 true。0 和空字符串都算填过，要返回 false。sameValue(a, b) 用 Object.is 判断两个值是不是完全一样。NaN 和 NaN 算一样，+0 和 -0 不算一样。";
 
 export async function runDemo(ctx) {
   ctx.log("null == undefined:", null == undefined, "null === undefined:", null === undefined);

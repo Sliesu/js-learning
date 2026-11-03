@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "两个团队给同一批客户打了标签。请写 analyzeTagSets(tagsA, tagsB)，返回三份名单：common 是两边都有的标签，onlyInA 是只在 A 有的标签，all 是两边合起来的标签。同一边的重复标签只算一次。";
+  "analyzeTagSets(tagsA, tagsB) 比较两份标签。common 是两边都有的，onlyInA 是只出现在第一份里的，all 是两份合起来的。重复标签只保留一次。";
 
 export async function runDemo(ctx) {
   const a = new Set(["js", "json", "fetch"]);

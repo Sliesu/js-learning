@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "订单号要统一加前缀。请写 createPrefixer(prefix)，返回 { prefix, formatAll(items) }。formatAll 把每一项拼成「当前前缀 + 该项」。前缀存在这个对象自己的 prefix 上。有人后来改了 prefix，下一次 formatAll 必须用新前缀。回调请用箭头函数，这样 this 仍指向这张前缀单，而不是指向数组方法。";
+  "createPrefixer(prefix) 返回一个对象，里面有 prefix 和 formatAll(items)。formatAll 把每一项变成「前缀 + 这一项」。如果后来改了 prefix，下一次要用新前缀。处理每一项时用箭头函数，this 才不会丢。";
 
 export async function runDemo(ctx) {
   const counter = {

@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "商品导入表很脏：没编号、编号重复、价格不是正数、库存空着。请写 cleanProductRecords(rawList)，返回能上架的商品。编号先去掉首尾空白，没有编号的丢掉。同一个编号只留第一条。价格转成数字后必须是大于 0 的有限数字，否则丢掉。标题去掉空白，没有标题就用「未命名商品」。库存转成数字，没有或转失败按 0，小于 0 的按 0。每条结果是 { id, title, price, stock }。";
+  "cleanProductRecords(rawList) 清洗一份商品表，返回可以留下的商品。没有编号的丢掉。编号先去掉首尾空格，同一个编号只留第一条。价格转成数字后必须大于 0，否则丢掉。标题去掉首尾空格，没有标题就用「未命名商品」。库存没有、不是数字，或者小于 0，都按 0。每条结果是 { id, title, price, stock }。";
 
 export async function runDemo(ctx) {
   const dirty = [

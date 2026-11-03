@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "运费嵌在订单的配送信息里，配送信息可能整段缺失。请写 readShippingFee(order)，读取 order 里的 delivery.fee。这一栏没填（null 或 undefined）时按默认运费 12 元。客户享受免运费时，这一栏会明确写成 0，必须仍然返回 0，不能被默认成 12。";
+  "readShippingFee(order) 读取订单上的运费，位置在 order.delivery.fee。订单或配送信息可能不存在。这一栏没填时返回 12。如果明确写了 0，那就是免运费，必须返回 0，不能把它当成没填。";
 
 export async function runDemo(ctx) {
   const freeOrder = { delivery: { fee: 0 } };

@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "改订单里某一行的数量时，不能改到原订单。请写 cloneAndUpdateQty(order, itemIndex, newQty)。先把整张订单深拷贝，包括里面的商品行，再把副本里第 itemIndex 行的 qty 改成 newQty，返回这份副本。";
+  "cloneAndUpdateQty(order, itemIndex, newQty) 修改订单里某一行的数量，原来的订单不能被改到。先把整张订单深拷贝，再改副本里那一行的 qty，返回副本。";
 
 export async function runDemo(ctx) {
   const order = { id: "o1", items: [{ qty: 1 }] };

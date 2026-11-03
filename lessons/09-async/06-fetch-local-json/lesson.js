@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "仓库要看每样商品还压着多少钱。请写 loadInventoryValue(ctx)。用 ctx.fetchJson(\"data/products.json\") 读取商品。每样变成 { id, title, stockValue }，stockValue 是 price * stock。按 stockValue 从高到低返回。";
+  "loadInventoryValue(ctx) 用 ctx.fetchJson(\"data/products.json\") 读取商品。每件商品转成 { id, title, stockValue }，其中 stockValue 是 price 乘 stock。按 stockValue 从高到低返回。";
 
 export async function runDemo(ctx) {
   const products = await ctx.fetchJson("data/products.json");

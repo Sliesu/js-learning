@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "开户勾选框、空备注、数字 0 不能混为一谈。请写 isTruthy(val)，把任意值收成 true 或 false。客服备注有三栏，屏幕只显示第一段真正写了字的内容。请写 pickFirstNonEmpty(a, b, fallback)：用 || 取 a、b、fallback 里第一个算「有内容」的值。空字符串要跳过。";
+  "isTruthy(val) 判断一个值算不算真，结果只能是 true 或 false。pickFirstNonEmpty(a, b, fallback) 在三句话里找第一句有内容的。空字符串要跳过，用 || 继续看下一句。";
 
 export async function runDemo(ctx) {
   ctx.log("Boolean([]):", Boolean([]), "Boolean(''):", Boolean(""));

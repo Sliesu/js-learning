@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "交易明细接口一页一页给。请写 collectPaginated(fetchPage)。从第 1 页开始，等待 fetchPage(page)。每一页的形状是 { items, hasMore }。把 items 按页序全部接成一个数组。hasMore 为假就停，不要再要下一页。";
+  "collectPaginated(fetchPage) 一页一页取出数据，从第 1 页开始。每一页的结果是 { items, hasMore }。把每一页的 items 按顺序接成一个数组。hasMore 为 false 时停止，不要再请求下一页。";
 
 export async function runDemo(ctx) {
   async function* asyncNums() {

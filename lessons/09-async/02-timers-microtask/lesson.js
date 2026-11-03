@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "有些结果要等一会儿才能给。请写 delayValue(ms, value)，返回一个 Promise，过 ms 毫秒后交出 value。搜索框不能每敲一个字就打一次接口。请写 createDebounced(fn, waitMs)，返回一个新函数。连续调用时只认最后一次的参数，并且从最后一次调用起再等满 waitMs 才执行 fn。";
+  "delayValue(ms, value) 返回一个 Promise，等到 ms 毫秒以后给出 value。createDebounced(fn, waitMs) 返回一个新函数。它被连续调用时，只执行最后一次，并且从最后一次调用开始，等满 waitMs 才执行。";
 
 export async function runDemo(ctx) {
   const start = Date.now();

@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "审计要知道一个账户对象往上挂了几层模板。请写 getPrototypeChainDepth(obj)。从 obj 出发，一层层找原型，数到 null 之前经过了几个原型。obj 自己不算一层。没有任何原型时结果是 0。";
+  "getPrototypeChainDepth(obj) 数这个对象上面有几层原型。从 obj 开始一层层往上找，数到 null 为止。obj 自己不算。上面没有原型时，结果是 0。";
 
 export async function runDemo(ctx) {
   const base = { role: "viewer" };

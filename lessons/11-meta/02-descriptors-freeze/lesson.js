@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "已签章的合同对象不能再改，里面嵌着的当事人、金额数组也不能改。请写 deepFreeze(obj)。把 obj 自己和里面每一层对象、数组都冻结，然后返回 obj。空值和非对象不用冻结。";
+  "deepFreeze(obj) 把一个对象冻结，使它不能再被修改。里面嵌套的对象和数组也要一起冻结。处理完以后返回原来的 obj。null 和其他非对象不用管。";
 
 export async function runDemo(ctx) {
   const cfg = Object.freeze({ env: "prod" });

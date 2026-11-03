@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "日终要把一批发生额里的偶数金额加总，奇数跳过。请写 sumEvenNumbers(nums)，用 for...of 遍历后返回偶数之和。另一张参数表只统计这张表自己的字段名，不能把原型上继承来的名字算进去。请写 listOwnKeys(obj)，返回自身可枚举属性名数组。若用 for...in，请配合 Object.hasOwn 排除继承属性。";
+  "sumEvenNumbers(nums) 把数组里的偶数加起来，奇数不管，用 for...of。listOwnKeys(obj) 列出这个对象自己的字段名，从原型继承来的不要。如果用 for...in，记得用 Object.hasOwn 过滤。";
 
 export async function runDemo(ctx) {
   const arr = [10, 20, 30];

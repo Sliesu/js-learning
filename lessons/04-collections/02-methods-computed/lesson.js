@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "每笔备忘要用业务前缀和单号拼出自己的栏位名。请写 createKeyedRecord(keyPrefix, id, value)，返回的对象要有三样东西：id 字段、一个名字为「前缀_单号」的字段（值是 value），以及 describe() 方法。describe() 返回「单号:值」，例如 id 是 A1、value 是 20，就返回 \"A1:20\"。";
+  "createKeyedRecord(keyPrefix, id, value) 返回一个对象。里面要有 id，还要有一个字段，字段名是「前缀_单号」，值是 value。再加一个 describe() 方法，返回「单号:值」。单号是 A1、值是 20 时，describe() 返回 \"A1:20\"。";
 
 export async function runDemo(ctx) {
   const field = "city";

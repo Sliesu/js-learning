@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "报价单排序后要把第一档换成新价格，原报价单必须留档。请写 sortAndReplaceFirst(nums, replacement)。不要改原数组。先得到一份按数字从小到大的新数组，再把第 0 项换成 replacement，返回这份新数组。";
+  "sortAndReplaceFirst(nums, replacement) 不要修改原来的数组。先按数字从小到大得到一份新数组，再把第一项换成 replacement，然后返回这份新数组。";
 
 export async function runDemo(ctx) {
   const raw = [30, 5, 12];

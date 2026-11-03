@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "订单详情是稍后才到的 Promise。请写 chainOrderTransform(orderPromise)。订单到达后，用 items 里每行的 qty * unitPrice 算出 total。没有 items 就按空数组。total 大于 0 时返回 { id: order.id, total }。total 小于等于 0，或者前面任何一步失败，都不要把异常抛出去，统一返回兜底单 { id: \"fallback\", total: 0 }。";
+  "chainOrderTransform(orderPromise) 等订单数据到达后计算总金额。每一行是 qty 乘 unitPrice。订单没有 items 时，按空数组算。总金额大于 0，返回 { id: 订单的 id, total }。总金额小于等于 0，或者计算过程出错，都不要把错误抛出去，返回 { id: \"fallback\", total: 0 }。";
 
 export async function runDemo(ctx) {
   const res = await Promise.resolve(10)

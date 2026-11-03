@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "批量回单要按序号盖章。请写 createIndexGetters(count)，返回 count 个函数。第 0 个函数调用时返回 0，第 1 个返回 1，依此类推。每个函数必须记住自己创建时的序号，不能全部变成最后一个序号。请用 for (let i = 0; i < count; i++)。";
+  "createIndexGetters(count) 返回 count 个函数。调用第 1 个得到 0，调用第 2 个得到 1，依此类推。每个函数都要记住自己的编号，不能最后全部变成同一个数。用 for (let i = 0; i < count; i++)。";
 
 export async function runDemo(ctx) {
   const varFns = [];
