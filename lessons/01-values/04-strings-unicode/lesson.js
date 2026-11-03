@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "formatOrderLine(title, qty, price) 拼一行小票。商品是「拿铁」、数量 2、单价 18，结果是「拿铁 x2 = ¥36」。countCodePoints(str) 数这段文字有几个字，表情也算一个。「A🚀B」是 3 个，不是 4 个。";
+  "实现 formatOrderLine(title, qty, price)，生成一行小票文本。以拿铁为例：数量 2、单价 18，应得到「拿铁 x2 = ¥36」。再实现 countCodePoints(str)，按 Unicode 码点统计字符数，表情符号也算一个。例如「A🚀B」应返回 3，而不是字符串 length 显示的 4。";
 
 export async function runDemo(ctx) {
   const rocket = "🚀";

@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "addCurrency(a, b) 把两笔人民币加在一起。0.1 元加 0.2 元必须等于 0.3 元。先把每一笔四舍五入成「分」，加完再换回「元」。clampNumber(val, min, max) 把一个数限制在最小值和最大值之间。val 如果不是正常数字，比如 NaN 或无穷大，就返回最小值。";
+  "addCurrency(a, b) 把两笔人民币加在一起。0.1 元加 0.2 元必须等于 0.3 元。先把每一笔四舍五入成「分」，加完再换回「元」。clampNumber(val, min, max) 把一个数限制在最小值和最大值之间。如果 val 不是有限数字（如 NaN 或 Infinity），就返回最小值。";
 
 export async function runDemo(ctx) {
   ctx.log("0.1 + 0.2 直接相加:", 0.1 + 0.2);

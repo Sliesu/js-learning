@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "evaluateLinear(k, x, b) 计算 k × x + b，比如费率乘金额，再加上一笔固定费用。isStrictMode() 检查现在是不是严格模式。这个函数被直接调用时，this 是 undefined 就返回 true。";
+  "evaluateLinear(k, x, b) 计算 k × x + b，比如费率乘金额再加上一笔固定费用。isStrictMode() 判断当前是否处于严格模式。直接调用这个函数时，如果 this 是 undefined，就返回 true。";
 
 export async function runDemo(ctx) {
   const exprValue = 3 * 4 + 2;

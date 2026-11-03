@@ -2,7 +2,7 @@
 export function evaluateLinear(k, x, b) {
 }
 
-// 自检：当前是不是严格模式。直接调用时，严格模式下 this 严格等于 undefined。
+// 判断当前是否处于严格模式。直接调用时，在严格模式下 this 为 undefined。
 export function isStrictMode() {
   return false;
 }
