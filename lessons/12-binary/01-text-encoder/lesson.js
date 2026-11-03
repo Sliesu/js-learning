@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "utf8ByteLength(str) 返回一段文字按 UTF-8 编码后占用多少字节。汉字通常不止 1 个字节。roundTripUtf8(uint8Bytes) 把一组 UTF-8 字节解回原来的文字。";
+  "utf8ByteLength(str) 返回一段文本按 UTF-8 编码后占用多少字节。汉字通常不止 1 个字节。roundTripUtf8(uint8Bytes) 把一组 UTF-8 字节解码还原成原来的文本。";
 
 export async function runDemo(ctx) {
   const bytes = new TextEncoder().encode("你好JS");

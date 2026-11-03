@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "formatUtcDate(isoStr) 把时间格式化成 UTC 日期，格式是 \"YYYY-MM-DD\"。月份和日期不足两位时补 0，不要用电脑自己的时区。detectTemporalSupport() 检查当前环境有没有 Temporal，有就返回 true，没有就返回 false。";
+  "formatUtcDate(isoStr) 把时间格式化成 UTC 日期，格式是 \"YYYY-MM-DD\"。月份和日期不足两位时补 0，不要使用运行环境的本地时区。detectTemporalSupport() 检查当前环境是否支持 Temporal，有就返回 true，没有就返回 false。";
 
 export async function runDemo(ctx) {
   const d = new Date("2025-03-06T11:45:00Z");

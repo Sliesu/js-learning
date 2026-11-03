@@ -77,7 +77,7 @@ function formatInlineCode(text) {
 
 function updateProgress() {
   const done = ALL_LESSONS.filter((lesson) => state.progress[lesson.id]).length;
-  els.progressSummary.textContent = `${done} / ${ALL_LESSONS.length} 课写完了`;
+  els.progressSummary.textContent = `${done} / ${ALL_LESSONS.length} 课已完成`;
   els.progressBar.style.width = `${(done / ALL_LESSONS.length) * 100}%`;
 }
 
@@ -184,7 +184,7 @@ function showResult(kind, title, rows) {
   els.resultPanel.className = `result ${kind}`;
   els.resultTitle.textContent = title;
   els.resultList.innerHTML = rows
-    .map((row) => `<li class="${row.ok ? "ok" : "bad"}">${row.ok ? "通过" : "还没对"} · ${escapeHtml(row.label)}</li>`)
+    .map((row) => `<li class="${row.ok ? "ok" : "bad"}">${row.ok ? "通过" : "未通过"} · ${escapeHtml(row.label)}</li>`)
     .join("");
 }
 
@@ -247,7 +247,7 @@ async function saveExerciseFile(exercisePath, source) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ path: exercisePath, source }),
     });
-    if (response.ok) els.saveNote.textContent = "这版已经写回练习文件，刷新也还在。";
+    if (response.ok) els.saveNote.textContent = "这版已经保存到练习文件，刷新也不会丢失。";
   } catch {
     // 浏览器草稿已经留下，文件服务不支持保存时也不影响做题。
   }

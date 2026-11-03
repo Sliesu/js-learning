@@ -3,7 +3,7 @@ export const summary =
 
 export const keyPoints = [
   "把「遍历骨架」和「每项怎么处理的回调」拆开，是 `map`、`filter` 等所有集合操作的核心思想。",
-  "用高阶函数包装原函数，可以在不改动原函数代码的前提下加上缓存、日志、只执行一次等横切能力。",
+  "用高阶函数包装原函数，可以在不改动原函数代码的前提下，为它加上缓存、日志、只执行一次这类通用能力。",
 ];
 
 export const remember = [
@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "once(fn) 包住一个函数，让它只真正执行一次。第一次调用时执行 fn，参数原样传进去，并记住返回值。之后再怎么调用，都直接返回第一次的结果。";
+  "once(fn) 包裹一个函数，让它只真正执行一次。第一次调用时执行 fn，参数原样传入，并记住返回值。之后再怎么调用，都直接返回第一次的结果。";
 
 export async function runDemo(ctx) {
   const withLog = (fn) => (...args) => {

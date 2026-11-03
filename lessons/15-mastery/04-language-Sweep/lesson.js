@@ -9,7 +9,7 @@ export const keyPoints = [
 ];
 
 export const remember = [
-  "`Object.entries` -> 数组方法处理 -> `Object.fromEntries` 让对象也能享受数组的整套链式方法。",
+  "`Object.entries` -> 数组方法处理 -> `Object.fromEntries` 让对象也能用上数组的整套链式方法。",
 ];
 
 export const taskDescription =

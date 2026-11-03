@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "calcWeightedSum(multiplier = 1, ...numbers) 先把后面传进来的数字加起来，再乘以系数。没有传系数时，系数按 1 算。";
+  "calcWeightedSum(multiplier = 1, ...numbers) 先把后面传进来的数字加起来，再乘以系数。没有传系数时，系数按 1 计算。";
 
 export async function runDemo(ctx) {
   function demo(a = 10, ...rest) {

@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "simulateNew(Constructor, ...args) 自己实现 new 的效果，函数里面不要写 new。先根据构造函数的原型做出一个对象，再让构造函数在这个对象上执行。如果构造函数返回了对象或函数，就用那个返回值。否则用你做出来的对象。";
+  "simulateNew(Constructor, ...args) 自己实现 new 的效果，函数里面不要写 new。先根据构造函数的原型创建一个新对象，再让构造函数在这个对象上执行。如果构造函数返回了对象或函数，就用那个返回值。否则用你创建出来的对象。";
 
 export async function runDemo(ctx) {
   function Product(title, price) {

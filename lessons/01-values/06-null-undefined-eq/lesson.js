@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "isNullish(val) 判断这个值是不是「没填」。只有 null 和 undefined 返回 true。0 和空字符串都算填过，要返回 false。sameValue(a, b) 用 Object.is 判断两个值是不是完全一样。NaN 和 NaN 算一样，+0 和 -0 不算一样。";
+  "isNullish(val) 判断这个值是不是「没填」。只有 null 和 undefined 返回 true。0 和空字符串都视为已填写，应返回 false。sameValue(a, b) 用 Object.is 判断两个值是不是完全一样。NaN 和 NaN 算一样，+0 和 -0 不算一样。";
 
 export async function runDemo(ctx) {
   ctx.log("null == undefined:", null == undefined, "null === undefined:", null === undefined);

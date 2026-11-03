@@ -8,7 +8,7 @@ export const keyPoints = [
 ];
 
 export const remember = [
-  "记口诀：`for...of` 拿值（Value of Iterable），`for...in` 拿键（Key in Object）。",
+  "一句话区分：`for...of` 取「值」，`for...in` 取「键」。",
 ];
 
 export const taskDescription =

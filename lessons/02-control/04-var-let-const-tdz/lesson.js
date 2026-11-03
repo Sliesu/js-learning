@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "demonstrateShadowing(outerVal, innerVal) 用来看块里面的同名变量会不会改到外面。外面的值是 outerVal。进入块以后，同名变量换成 innerVal。返回 { inside, outside }。inside 是块里面的值，outside 是离开块以后外面仍然保持的值。";
+  "demonstrateShadowing(outerVal, innerVal) 用来观察：块内部的同名变量会不会影响外部。外部的初始值是 outerVal。进入块以后，同名变量换成 innerVal。返回 { inside, outside }。inside 是块内的值，outside 是离开块后外部仍然保留的值。";
 
 export async function runDemo(ctx) {
   const x = "外层";

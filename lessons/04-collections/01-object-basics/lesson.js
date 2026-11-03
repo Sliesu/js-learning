@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "pickOwnFields(record, keys) 按给定的字段名，从档案里抄出一份新对象。只抄这份档案自己有的字段，用 Object.hasOwn 判断。原型上同名的字段不要抄。";
+  "pickOwnFields(record, keys) 按给定的字段名，从档案里取出一份新对象。只取这份档案自身已有的字段，用 Object.hasOwn 判断。原型上同名的字段不要取。";
 
 export async function runDemo(ctx) {
   const user = { id: "u1", undefinedField: undefined };

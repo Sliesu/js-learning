@@ -7,7 +7,7 @@ export const keyPoints = [
 ];
 
 export const remember = [
-  "面试与实战排错核心：同步代码 -> 全部微任务 -> 下一个宏任务。",
+  "排查异步问题就靠这条规律：同步代码 → 全部微任务 → 下一个宏任务。",
 ];
 
 export const taskDescription =

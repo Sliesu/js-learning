@@ -2,6 +2,6 @@
 export function recordsToJsonBlob(records) {
 }
 
-// 读出 Blob 里的文字，再解析回数据。
+// 读出 Blob 里的字符串，再解析回数据。
 export async function parseJsonBlob(blob) {
 }

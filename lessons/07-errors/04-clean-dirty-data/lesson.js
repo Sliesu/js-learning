@@ -7,11 +7,11 @@ export const keyPoints = [
 ];
 
 export const remember = [
-  "在进入业务计算前，先把脏数据在边界层一次性清洗成结构固定的干净数组。",
+  "在数据进入业务计算之前，先在入口处一次性清洗成结构固定的干净数组。",
 ];
 
 export const taskDescription =
-  "cleanProductRecords(rawList) 清洗一份商品表，返回可以留下的商品。没有编号的丢掉。编号先去掉首尾空格，同一个编号只留第一条。价格转成数字后必须大于 0，否则丢掉。标题去掉首尾空格，没有标题就用「未命名商品」。库存没有、不是数字，或者小于 0，都按 0。每条结果是 { id, title, price, stock }。";
+  "cleanProductRecords(rawList) 清洗一份商品表，返回清洗后应当保留的商品。没有编号的丢掉。编号先去掉首尾空格，同一个编号只留第一条。价格转成数字后必须大于 0，否则丢掉。标题去掉首尾空格，没有标题就用「未命名商品」。库存没有、不是数字，或者小于 0，都按 0。每条结果是 { id, title, price, stock }。";
 
 export async function runDemo(ctx) {
   const dirty = [

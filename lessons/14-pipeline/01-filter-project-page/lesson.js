@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "queryProducts(products, 条件) 查询可卖的商品。默认最低价是 0，页码是 1，每页 2 条。只保留价格不低于最低价、并且库存大于 0 的商品。先按价格从高到低排，价格相同再按 id 从小到大排。返回 { total, items }。total 是筛选后的总条数，items 是当前这一页，每条只保留 id、title 和 price。";
+  "queryProducts(products, { minPrice = 0, page = 1, pageSize = 2 }) 查询可卖的商品。最低价默认 0，页码默认 1，每页默认 2 条。只保留价格不低于最低价、且库存大于 0 的商品。先按价格从高到低排，价格相同再按 id 从小到大排。返回 { total, items }。total 是筛选后的总条数，items 是当前这一页，每条只保留 id、title 和 price。";
 
 export async function runDemo(ctx) {
   const products = await ctx.fetchJson("data/products.json");

@@ -1,5 +1,5 @@
 export const summary =
-  "检查不是只看一个数字对不对，还会看整个对象的结构是否一致。这一课让你交出一个带求和结果的对象。";
+  "检查不是只看一个数字对不对，还会看整个对象的结构是否一致。这一课让你写出一个带求和结果的对象。";
 
 export const keyPoints = [
   "两个数字是否同一个值，用精确比较。`1` 和 `\"1\"` 不算同一个。",
@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "buildPair(a, b) 把两个数收成一个对象。first 是第一个数，second 是第二个数，sum 是它们相加。3 和 4 的 sum 是 7。";
+  "buildPair(a, b) 把两个数组合成一个对象。first 是第一个数，second 是第二个数，sum 是两者之和。3 和 4 的 sum 是 7。";
 
 export async function runDemo(ctx) {
   ctx.log("断言示例：Object.is(1 + 2, 3) =>", Object.is(1 + 2, 3));

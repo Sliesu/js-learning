@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "createPrefixer(prefix) 返回一个对象，里面有 prefix 和 formatAll(items)。formatAll 把每一项变成「前缀 + 这一项」。如果后来改了 prefix，下一次要用新前缀。处理每一项时用箭头函数，this 才不会丢。";
+  "createPrefixer(prefix) 返回一个对象，里面有 prefix 和 formatAll(items)。formatAll 把每一项变成「前缀 + 这一项」。如果之后修改了 prefix，下一次调用应使用新前缀。处理每一项时使用箭头函数，才能在回调里正确保留 this。";
 
 export async function runDemo(ctx) {
   const counter = {

@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "createBankAccount(initialBalance = 0) 创建一个账户。余额不要暴露出去，外面只能用返回的三个方法。deposit(amount) 存钱，并返回存完后的余额。withdraw(amount) 余额够就扣掉并返回 true，不够就一分不扣并返回 false。getBalance() 返回当前余额。";
+  "createBankAccount(initialBalance = 0) 创建一个账户。余额不能直接访问，只能通过返回的三个方法来操作。deposit(amount) 存钱，并返回存完后的余额。withdraw(amount) 余额足够时扣款并返回 true，余额不足时不扣款并返回 false。getBalance() 返回当前余额。";
 
 export async function runDemo(ctx) {
   function createCounter(start = 0) {

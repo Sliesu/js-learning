@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "下面已经有 BaseOrder。请在它上面写子类 VipOrder。constructor(id, amount, rate) 先让父类记下单号和金额，再记下 rate。finalAmount() 用父类算出的金额乘上 rate。VipOrder.halfPrice(id, amount) 直接创建一个 rate 为 0.5 的会员订单。";
+  "下面已经有 BaseOrder。请在它上面写子类 VipOrder。constructor(id, amount, rate) 先调用父类构造器记下单号和金额，再记录 rate。finalAmount() 用父类算出的金额乘上 rate。VipOrder.halfPrice(id, amount) 直接创建一个 rate 为 0.5 的会员订单。";
 
 export async function runDemo(ctx) {
   class Base {

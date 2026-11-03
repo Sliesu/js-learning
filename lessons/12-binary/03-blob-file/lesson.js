@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "recordsToJsonBlob(records) 把数组变成 JSON 文字，放进一个 Blob，类型设为 application/json。parseJsonBlob(blob) 先把 Blob 里的文字读出来，再解析回原来的数据。";
+  "recordsToJsonBlob(records) 把数组序列化成 JSON 字符串，放进一个 Blob，类型设为 application/json。parseJsonBlob(blob) 先把 Blob 里的字符串读出来，再解析回原来的数据。";
 
 export async function runDemo(ctx) {
   const blob = new Blob([JSON.stringify({ hello: "world" })], { type: "application/json" });

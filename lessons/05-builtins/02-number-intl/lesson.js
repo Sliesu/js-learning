@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "parsePixelValue(cssStr) 从 \"18px\" 这样的文字里取出整数。解析不出来就返回 0，不要返回 NaN。formatCNY(amount) 把金额显示成人民币，使用 zh-CN，要带货币符号和千分位。";
+  "parsePixelValue(cssStr) 从 \"18px\" 这样的字符串里取出整数。解析不出来就返回 0，不要返回 NaN。formatCNY(amount) 把金额显示成人民币，使用 zh-CN 区域设置，要带货币符号和千分位。";
 
 export async function runDemo(ctx) {
   const fmt = new Intl.NumberFormat("zh-CN", { style: "currency", currency: "CNY" });

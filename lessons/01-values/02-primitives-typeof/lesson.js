@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "preciseType(value) 说明一个值到底是什么类型。null 要返回 \"null\"，不能返回 \"object\"。数组返回 \"array\"。其他情况跟 typeof 一样：数字是 \"number\"，文字是 \"string\"。";
+  "preciseType(value) 说明一个值到底是什么类型。null 要返回 \"null\"，不能返回 \"object\"。数组返回 \"array\"。其他情况与 typeof 一致：数字返回 \"number\"，字符串返回 \"string\"。";
 
 export async function runDemo(ctx) {
   const samples = ["hello", 42, 10n, true, undefined, Symbol("id"), null, [1, 2], { a: 1 }];

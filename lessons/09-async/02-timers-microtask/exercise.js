@@ -1,4 +1,4 @@
-// 过 ms 毫秒后交出 value。
+// 过 ms 毫秒后产出 value。
 export function delayValue(ms, value) {
 }
 

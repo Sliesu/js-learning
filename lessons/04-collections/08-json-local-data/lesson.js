@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "exportActiveUserNames(usersJsonStr) 解析一段会员 JSON。只保留 active 为 true 的会员，按原来的顺序返回他们的姓名。";
+  "exportActiveUserNames(usersJsonStr) 解析一段用户 JSON。只保留 active 为 true 的用户，按原来的顺序返回他们的姓名。";
 
 export async function runDemo(ctx) {
   const users = await ctx.fetchJson("data/users.json");
