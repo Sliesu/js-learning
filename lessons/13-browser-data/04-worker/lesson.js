@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `runHeavySumInWorker(numbers)`：在支持 `Worker` 的环境中用内联 Worker 计算平方和（`n * n` 累加），在无 `Worker` 环境回退异步计算，返回 Promise 结果。";
+  "一大串金额的平方和会卡住柜台页面。请写 runHeavySumInWorker(numbers)，返回 Promise。环境支持 Worker 时，把计算放进 Worker；不支持时就在异步回退里算。结果都是每一项 n * n 的总和。";
 
 export async function runDemo(ctx) {
   ctx.log("当前环境是否支持 Web Worker:", typeof globalThis.Worker === "function");

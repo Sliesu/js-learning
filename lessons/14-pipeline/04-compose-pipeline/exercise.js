@@ -1,8 +1,7 @@
-// 练习 14.4：实现 pipe 与 pipeAsync 函数组合器
+// 从左到右同步执行每个函数，上一步的返回值交给下一步。
 export function pipe(...fns) {
-  // TODO: 返回 (initialValue) => fns.reduce((val, fn) => fn(val), initialValue)
 }
 
+// 从左到右执行，每一步都等待完成。
 export function pipeAsync(...fns) {
-  // TODO: 返回 async (initialValue) => { 依次 await fn(val) 并返回最终值 }
 }

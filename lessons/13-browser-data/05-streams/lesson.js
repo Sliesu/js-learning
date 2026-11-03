@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `consumeUppercaseStream(chunks)`：用 `new ReadableStream` 将字符串数组 `chunks` 逐个 `enqueue`，再用 `stream.getReader()` 读出所有块转大写并拼接成一个完整字符串返回。";
+  "报文一块一块到达，展示前要转成大写再接成一条。请写 consumeUppercaseStream(chunks)。用 ReadableStream 把 chunks 逐块放进去并关闭。再把流读完，每块转成大写，按原顺序拼成一个字符串返回。";
 
 export async function runDemo(ctx) {
   const stream = new ReadableStream({

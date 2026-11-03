@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `rangeStep(start, count, step = 1)` 用 `Array.from` 生成长度为 `count` 的等差数列；实现 `compactHoles(sparseArr)` 过滤掉稀疏空洞与 `undefined`。";
+  "生成一批期次号。请写 rangeStep(start, count, step = 1)，返回 count 个数：从 start 开始，每次加 step。例如从 10 起、要 3 个、步长 5，得到 [10, 15, 20]。导入的表格里还有空洞和没填的格子。请写 compactHoles(sparseArr)，丢掉空洞和 undefined，只留下真正有值的项。";
 
 export async function runDemo(ctx) {
   const seq = Array.from({ length: 4 }, (_, i) => (i + 1) * 10);

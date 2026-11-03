@@ -1,4 +1,3 @@
-// 练习 11.3：使用 Reflect.ownKeys 获取包含不可枚举与 Symbol 的全部自身键
+// 返回对象自己的全部键，包含不可枚举属性和 Symbol。
 export function inspectAllOwnKeys(obj) {
-  // TODO: 返回 Reflect.ownKeys(obj)
 }

@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `parseLogKeyValues(msg)`：用命名捕获组提取如 `'user=u1 action=login'` 中的所有键值对为普通对象 `{ user: 'u1', action: 'login' }`。";
+  "支付日志是一行字，不是表格，例如 \"user=u1 action=login\"。请写 parseLogKeyValues(msg)，把所有 key=value 提出来，返回普通对象 { user: \"u1\", action: \"login\" }。一行里有好几对时都要留下，值里不会有空格。";
 
 export async function runDemo(ctx) {
   const re = /(?<k>\w+)=(?<v>\w+)/g;

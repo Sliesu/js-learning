@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `createOrderLine(unitPrice, initialQty = 1)`：返回带有 `unitPrice`、`qty`、`get subtotal()`（返回 `unitPrice * qty`）以及 `set qty(v)`（若 `v < 0` 抛 `RangeError`）的对象。";
+  "订单行的小计不能让人单独乱填，它永远等于单价乘数量。请写 createOrderLine(unitPrice, initialQty = 1)。返回的对象有 unitPrice、qty 和 subtotal。subtotal 读取时返回 unitPrice * qty。设置 qty 时，小于 0 要抛出 RangeError，消息是 \"qty cannot be negative\"，并且不要把数量改成负数。";
 
 export async function runDemo(ctx) {
   const rect = {

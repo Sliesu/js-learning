@@ -1,4 +1,4 @@
-// 练习 6.3：编写 ShoppingCart 类
+// 购物车：addItem(title, price, qty = 1) 加商品。
+// totalPrice() 是金额合计。count() 是件数合计。
 export class ShoppingCart {
-  // TODO: 实现 addItem(title, price, qty = 1)、totalPrice()、count()
 }

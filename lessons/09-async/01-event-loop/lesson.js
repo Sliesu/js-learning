@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `recordExecutionOrder()`：返回一个 Promise，内部依次触发同步推入 `'sync'`、`Promise.resolve().then` 推入 `'micro'`、`setTimeout(..., 0)` 推入 `'macro'` 并 resolve 最终顺序数组。";
+  "清算任务分三种：当场做完的同步步骤、当前同步代码结束后立刻做的微任务、下一轮才做的定时任务。请写 recordExecutionOrder()，返回一个 Promise。最终数组必须是 [\"sync\", \"micro\", \"macro\"]：先同步推进 \"sync\"，再用 Promise.resolve().then 推进 \"micro\"，再用 setTimeout 0 毫秒推进 \"macro\"，然后把这个顺序 resolve 出去。";
 
 export async function runDemo(ctx) {
   const order = [];

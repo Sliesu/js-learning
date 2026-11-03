@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `groupUsersByCity(users)`：用 `Object.groupBy` 按 `user.city` 分组后，将每个城市的用户对象数组映射为用户名 `name` 数组返回。";
+  "总行要按开户城市看客户名单。请写 groupUsersByCity(users)。按每个用户的 city 分组，每组只保留 name。例如上海有林晓和陈予，就得到 { 上海: [\"林晓\", \"陈予\"] }。城市名和组内顺序都跟原数据一致。";
 
 export async function runDemo(ctx) {
   const users = await ctx.fetchJson("data/users.json");

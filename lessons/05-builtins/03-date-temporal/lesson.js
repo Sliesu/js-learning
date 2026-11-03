@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `formatUtcDate(isoStr)` 返回 `'YYYY-MM-DD'` 格式的 UTC 日期字符串，以及 `detectTemporalSupport()` 返回布尔值表示 `globalThis.Temporal` 是否存在。";
+  "跨境对账只用 UTC 日期，不要用操作员电脑上的本地时区。请写 formatUtcDate(isoStr)，把时间转成 \"YYYY-MM-DD\"，月和日不足两位要补 0。另外，新核心是否支持 Temporal 还不确定。请写 detectTemporalSupport()，环境里有 Temporal 就返回 true，没有就返回 false。";
 
 export async function runDemo(ctx) {
   const d = new Date("2025-03-06T11:45:00Z");

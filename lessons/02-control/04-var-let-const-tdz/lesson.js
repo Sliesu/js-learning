@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `demonstrateShadowing(outerVal, innerVal)`：展示块内同名 `let` 遮蔽（shadow）外层变量且互不污染，返回 `{ inside, outside }`。";
+  "同一笔业务在总账和分录里可以同名，但不能互相改掉。请写 demonstrateShadowing(outerVal, innerVal)。外层金额是 outerVal。进入分录块之后，同名变量改成 innerVal，这个值记为 inside。离开分录块后，外层金额必须仍是 outerVal，记为 outside。返回 { inside, outside }。";
 
 export async function runDemo(ctx) {
   const x = "外层";

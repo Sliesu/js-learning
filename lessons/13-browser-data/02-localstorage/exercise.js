@@ -1,8 +1,4 @@
-// 练习 13.2：封装带前缀与异常兜底的 JSON Storage 访问器
+// save(key, value) 用「前缀:key」把值存成 JSON。
+// load(key, fallback) 读出并解析。没有或解析失败时返回 fallback，默认 null。
 export function createJsonStore(prefix, storage = globalThis.localStorage) {
-  // TODO:
-  // 返回 {
-  //   save(key, value): 调用 storage.setItem(`${prefix}:${key}`, JSON.stringify(value))
-  //   load(key, fallback = null): 读取对应项，若为 null 或 JSON.parse 抛错则返回 fallback
-  // }
 }

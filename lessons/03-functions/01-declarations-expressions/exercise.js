@@ -1,4 +1,3 @@
-// 练习 3.1：将函数作为值存放在字典中并按名称调度
+// 按操作名记账：add 相加，sub 相减，mul 相乘。不认识的操作返回 null。
 export function runOperation(opName, a, b) {
-  // TODO: 支持 "add" (a+b), "sub" (a-b), "mul" (a*b)，其余返回 null
 }

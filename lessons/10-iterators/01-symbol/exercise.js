@@ -1,8 +1,7 @@
-// 练习 10.1：使用 Symbol.for 挂载不污染 Object.keys 的元数据
+// 用 Symbol.for("js_learn.meta") 把内部备注挂到记录上，并返回该记录。
 export function attachHiddenMeta(record, metaVal) {
-  // TODO: 使用 Symbol.for("js_learn.meta") 作为键写入 record 并返回 record
 }
 
+// 用同一把钥匙读出内部备注。
 export function readHiddenMeta(record) {
-  // TODO: 读取并返回 record[Symbol.for("js_learn.meta")]
 }

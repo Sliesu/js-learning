@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `packHeader(version, payloadLength)`：创建 6 字节 `ArrayBuffer`，用 `DataView` 在偏移 `0` 处按大端序写入 `Uint16` 的 `version`，在偏移 `2` 处按大端序写入 `Uint32` 的 `payloadLength`，返回 `new Uint8Array(buf)`。";
+  "渠道报文头固定 6 个字节，而且是大端序。请写 packHeader(version, payloadLength)。前 2 个字节写下 version，后 4 个字节写下 payloadLength。返回这 6 个字节组成的 Uint8Array。";
 
 export async function runDemo(ctx) {
   const buf = new ArrayBuffer(4);

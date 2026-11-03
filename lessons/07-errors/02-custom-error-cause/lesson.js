@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `DataValidationError` 类（继承 `Error`，带 `field` 属性），以及 `parseOrderAmount(record)`：尝试把 `record.amount` 解析成正数，失败时抛出带 `{ cause }` 的 `DataValidationError`。";
+  "订单金额不合法时，调用方要知道是哪一栏错了，也要能看到底层原因。请写 DataValidationError，它是 Error 的子类。构造时接收 message、field、options。名字固定为 \"DataValidationError\"，并把 field 记在错误上，options 传给父类，这样 cause 才挂得住。再写 parseOrderAmount(record)：record.amount 是大于 0 的数字就返回它。否则抛出 DataValidationError，栏位名是 \"amount\"，消息是 \"Invalid order amount\"，底层原因是 RangeError(\"amount must be positive\")。";
 
 export async function runDemo(ctx) {
   try {

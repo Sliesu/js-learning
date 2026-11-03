@@ -1,8 +1,7 @@
-// 练习 12.3：使用 Blob 封装 JSON 数据并异步读取解析
+// 把记录打包成类型为 application/json 的 Blob。
 export function recordsToJsonBlob(records) {
-  // TODO: 返回 new Blob([JSON.stringify(records)], { type: "application/json" })
 }
 
+// 读出 Blob 里的文字，再解析回数据。
 export async function parseJsonBlob(blob) {
-  // TODO: const text = await blob.text(); 返回 JSON.parse(text)
 }

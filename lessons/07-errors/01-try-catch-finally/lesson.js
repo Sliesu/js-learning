@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `safeParseJson(rawStr, fallbackValue)`：用 `try...catch` 解析 JSON，成功返回 `{ ok: true, data }`，失败返回 `{ ok: false, data: fallbackValue, errorName: err.name }`。";
+  "上游报文可能不是合法 JSON，不能让整批作业崩掉。请写 safeParseJson(rawStr, fallbackValue)。解析成功返回 { ok: true, data }，data 是解析结果。解析失败返回 { ok: false, data: fallbackValue, errorName }，errorName 用捕获到的错误名字，例如 \"SyntaxError\"。没传 fallbackValue 时，失败结果里的 data 用 null。";
 
 export async function runDemo(ctx) {
   try {

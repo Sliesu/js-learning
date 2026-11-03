@@ -1,5 +1,4 @@
-// 练习 0.2：构造包含求和结果的对象
+// 两笔金额记到一张回单上：first、second，以及它们的和 sum。
 export function buildPair(a, b) {
-  // TODO: 返回 { first: a, second: b, sum: a + b }
   return null;
 }

@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "基于已给的 `BaseOrder(id, amount)`，实现子类 `VipOrder extends BaseOrder`：接收 `(id, amount, rate)`，重写 `finalAmount()` 返回 `super.finalAmount() * this.rate`，并实现静态工厂方法 `VipOrder.halfPrice(id, amount)`。";
+  "普通订单只按原价收。会员订单在原价上再乘自己的费率。下面已经有 BaseOrder。请写子类 VipOrder。constructor(id, amount, rate) 先按父类记下单号和金额，再记下 rate。finalAmount() 返回父类算出的金额再乘 rate。柜面还有一个快捷入口：VipOrder.halfPrice(id, amount) 直接生成费率为 0.5 的会员订单。";
 
 export async function runDemo(ctx) {
   class Base {

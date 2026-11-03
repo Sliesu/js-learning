@@ -10,7 +10,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `createStepRecorder()`：返回 `{ tap(stepName), snapshots }`；`tap(stepName)` 返回一个函数 `(data) => { 记录 { stepName, count: Array.isArray(data) ? data.length : 1, preview: structuredClone(data) } 到 snapshots; return data; }`。";
+  "给数据处理管道加观察点，不能改变流过去的数据。请写 createStepRecorder()，返回 { tap, snapshots }。tap(stepName) 再返回一个函数。这份数据经过它时，往 snapshots 追加 { stepName, count, preview }，然后原样返回数据。数组的 count 是长度，其他数据的 count 是 1。preview 必须是当时数据的深拷贝，后面改原数据不能影响已经记下的快照。";
 
 export async function runDemo(ctx) {
   ctx.log("调试探针模式：边流转数据边收集每一步的条数与快照");

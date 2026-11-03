@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `loadEnrichedPaidOrders(ctx)`：并发读取 `data/users.json` 与 `data/orders.json`，筛选 `status === 'paid'` 的订单，返回 `{ orderId, userName, city, total }` 数组。";
+  "已支付订单要带上客户姓名和城市，两份资料互不等待。请写 loadEnrichedPaidOrders(ctx)。同时读取 data/users.json 和 data/orders.json。只留 status 为 \"paid\" 的订单。每笔返回 { orderId, userName, city, total }。orderId 用订单 id，姓名和城市来自对应客户，total 是该订单 items 的 qty * unitPrice 合计。";
 
 export async function runDemo(ctx) {
   const [users, orders] = await Promise.all([

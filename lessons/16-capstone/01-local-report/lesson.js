@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `generateLocalBusinessReport(ctx)`：并发读取三份数据，筛选活跃用户的已支付订单，返回 `{ totalRevenue, revenueByCategory, topCity }`（`revenueByCategory` 为 `{ [category]: 金额 }`，`topCity` 为消费额最高的城市名）。";
+  "经营报表只统计仍在用的客户、而且已经支付的订单。请写 generateLocalBusinessReport(ctx)。同时读取 data/users.json、data/products.json、data/orders.json。客户 active 不是 true，或订单 status 不是 \"paid\"，整单不算。对算得上的订单，按商品行累加 qty * unitPrice。返回 { totalRevenue, revenueByCategory, topCity }。revenueByCategory 的键是商品分类 category。topCity 是消费金额最高的客户城市。金额相同则保留先统计到的城市。";
 
 export async function runDemo(ctx) {
   const [users, products, orders] = await Promise.all([

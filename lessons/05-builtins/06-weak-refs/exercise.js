@@ -1,5 +1,3 @@
-// 练习 5.6：使用 WeakMap 为对象实例做无内存泄漏的计算缓存
+// 返回一个函数。同一个对象第二次传入时，直接给上次的计算结果，不要再调用 computeFn。
 export function createObjectCache(computeFn) {
-  // TODO: 创建 WeakMap，返回函数 (obj) => ...
-  // 如果 WeakMap 中已有 obj，直接返回缓存结果；否则调用 computeFn(obj) 存入并返回
 }

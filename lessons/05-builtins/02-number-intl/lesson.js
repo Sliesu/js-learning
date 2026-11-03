@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `parsePixelValue(cssStr)` 用十进制 `parseInt` 提取像素整数（失败返回 `0`），以及 `formatCNY(amount)` 用 `Intl.NumberFormat('zh-CN', { style: 'currency', currency: 'CNY' })` 格式化金额。";
+  "样式表里的宽度写成 \"18px\"，布局系统只要前面的整数。请写 parsePixelValue(cssStr)，按十进制取出整数；认不出来就返回 0，不要返回 NaN。金额给客户看时要带人民币符号和千分位。请写 formatCNY(amount)，用中国地区的货币格式把金额格式化成人民币字符串。";
 
 export async function runDemo(ctx) {
   const fmt = new Intl.NumberFormat("zh-CN", { style: "currency", currency: "CNY" });

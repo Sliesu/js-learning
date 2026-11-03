@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `fetchUserLatestPaidOrder(userId, getUser, getOrdersByUser)`：先 `await getUser(userId)`，若用户 `!user.active` 返回 `null`；再 `await getOrdersByUser(user.id)`，返回最新一笔 `status === 'paid'` 的订单（按 `createdAt` 降序）。";
+  "要查某个客户最近一笔已支付订单，必须先确认客户还有效。请写 fetchUserLatestPaidOrder(userId, getUser, getOrdersByUser)。先等待 getUser(userId)。没有这个客户，或 active 不是真，就返回 null，不要再查订单。客户有效时，再等待 getOrdersByUser(user.id)。只留 status 为 \"paid\" 的订单，按 createdAt 从新到旧排，返回第一笔。一笔已支付都没有就返回 null。";
 
 export async function runDemo(ctx) {
   async function stepDemo() {

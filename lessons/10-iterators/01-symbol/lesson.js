@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `attachHiddenMeta(record, metaVal)`（用 `Symbol.for('js_learn.meta')` 作为键写入 `record`）与 `readHiddenMeta(record)` 读取该隐藏元数据。";
+  "对账单上有一条内部备注，不能出现在客户能导出的字段名单里。请写 attachHiddenMeta(record, metaVal)，用 Symbol.for(\"js_learn.meta\") 当钥匙把备注写进 record，并返回这份 record。再写 readHiddenMeta(record)，用同一把钥匙把备注读出来。Object.keys 不应该列出这把钥匙。";
 
 export async function runDemo(ctx) {
   const s1 = Symbol("id");

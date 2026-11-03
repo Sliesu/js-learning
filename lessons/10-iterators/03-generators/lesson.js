@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现生成器函数 `chunkGenerator(items, size)`：按每批 `size` 个元素惰性 `yield` 切片子数组（如 `[1,2,3,4,5]` 按 `2` 产出 `[1,2]`、`[3,4]`、`[5]`）。";
+  "大批流水不能一次交给下游。请写生成器 chunkGenerator(items, size)，按每批 size 笔往外给。例如 [1, 2, 3, 4, 5] 按 2 笔一批，依次给出 [1, 2]、[3, 4]、[5]。最后一批不足 size 也要给出去。";
 
 export async function runDemo(ctx) {
   function* idMaker() {

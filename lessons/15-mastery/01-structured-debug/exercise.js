@@ -1,7 +1,5 @@
-// 练习 15.1：实现不改变管道返回值的调试探针记录器
+// 返回 { tap, snapshots }。
+// tap(stepName) 返回一个函数：记下 { stepName, count, preview } 后，原样返回数据。
+// 数组的 count 是长度，其他是 1。preview 是深拷贝。
 export function createStepRecorder() {
-  // TODO:
-  // const snapshots = [];
-  // tap(stepName) 返回 (data) => { 向 snapshots 推入 { stepName, count, preview: structuredClone(data) }; return data; }
-  // 返回 { tap, snapshots }
 }

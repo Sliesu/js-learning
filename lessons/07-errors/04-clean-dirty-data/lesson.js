@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `cleanProductRecords(rawList)`：跳过无有效 `id` 或价格转数字后 `<= 0` / `NaN` 的项，按 `id.trim()` 去重（保留第一条），返回 `{ id, title: title?.trim() || '未命名商品', price: Number(price), stock: Math.max(0, Number(stock ?? 0) || 0) }` 数组。";
+  "商品导入表很脏：没编号、编号重复、价格不是正数、库存空着。请写 cleanProductRecords(rawList)，返回能上架的商品。编号先去掉首尾空白，没有编号的丢掉。同一个编号只留第一条。价格转成数字后必须是大于 0 的有限数字，否则丢掉。标题去掉空白，没有标题就用「未命名商品」。库存转成数字，没有或转失败按 0，小于 0 的按 0。每条结果是 { id, title, price, stock }。";
 
 export async function runDemo(ctx) {
   const dirty = [

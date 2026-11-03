@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `calcPaidItemsRevenue(orders)`：筛选 `status === 'paid'` 的订单，用 `flatMap` 展开所有 `items`，再用 `reduce` 计算 `qty * unitPrice` 总营收。";
+  "只统计已经支付的订单赚了多少钱。请写 calcPaidItemsRevenue(orders)。订单里 status 不是 \"paid\" 的整单跳过。已支付订单的 items 全部摊开，每一行金额是 qty * unitPrice，最后返回这些金额的合计。";
 
 export async function runDemo(ctx) {
   const sampleOrders = [

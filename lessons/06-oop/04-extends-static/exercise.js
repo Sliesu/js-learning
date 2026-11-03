@@ -8,10 +8,7 @@ export class BaseOrder {
   }
 }
 
-// 练习 6.4：实现继承 BaseOrder 的 VipOrder
+// 会员订单：在原价上再乘 rate。
+// halfPrice(id, amount) 生成费率为 0.5 的会员订单。
 export class VipOrder extends BaseOrder {
-  // TODO:
-  // 1. constructor(id, amount, rate) 调用 super(id, amount) 并保存 this.rate = rate
-  // 2. finalAmount() 返回 super.finalAmount() * this.rate
-  // 3. static halfPrice(id, amount) 返回 rate 为 0.5 的 VipOrder 实例
 }

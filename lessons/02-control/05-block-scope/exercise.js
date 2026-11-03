@@ -1,5 +1,5 @@
-// 练习 2.5：利用 for (let i = ...) 为每次迭代绑定独立变量
+// 返回 count 个函数。第 i 个函数被调用时返回 i。
+// 用 for (let ...)，让每一轮的序号互不影响。
 export function createIndexGetters(count) {
-  // TODO: 返回数组 [() => 0, () => 1, ..., () => count - 1]
   return [];
 }

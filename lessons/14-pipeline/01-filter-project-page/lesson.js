@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `queryProducts(products, { minPrice = 0, page = 1, pageSize = 2 })`：筛选 `price >= minPrice` 且 `stock > 0`，按 `price` 降序（同价按 `id` 升序），返回 `{ total, items: 当前页的 [{ id, title, price }] }`。";
+  "商品查询页只卖有库存、而且达到最低价的商品。请写 queryProducts(products, 条件)。默认最低价 0、第 1 页、每页 2 条。先留下 price 大于等于最低价且 stock 大于 0 的商品。按价格从高到低，价格相同按 id 从小到大。total 是筛选后的总条数，不是当前页条数。items 只取当前页，每条只留 { id, title, price }。返回 { total, items }。";
 
 export async function runDemo(ctx) {
   const products = await ctx.fetchJson("data/products.json");

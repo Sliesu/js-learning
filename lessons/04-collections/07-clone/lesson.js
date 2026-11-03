@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `cloneAndUpdateQty(order, itemIndex, newQty)`：用 `structuredClone` 深拷贝 `order`，把 `items[itemIndex].qty` 改为 `newQty` 后返回新订单。";
+  "改订单里某一行的数量时，不能改到原订单。请写 cloneAndUpdateQty(order, itemIndex, newQty)。先把整张订单深拷贝，包括里面的商品行，再把副本里第 itemIndex 行的 qty 改成 newQty，返回这份副本。";
 
 export async function runDemo(ctx) {
   const order = { id: "o1", items: [{ qty: 1 }] };

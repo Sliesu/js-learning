@@ -1,7 +1,6 @@
-// 练习 4.2：使用属性简写、计算属性名与方法简写
+// 返回的对象包含：
+// id；
+// 字段名是「前缀_单号」，值是 value；
+// describe() 返回「单号:值」。
 export function createKeyedRecord(keyPrefix, id, value) {
-  // TODO: 返回对象包含：
-  // 1. id
-  // 2. 计算属性 [`${keyPrefix}_${id}`]: value
-  // 3. 方法 describe() 返回 `${id}:${value}`
 }

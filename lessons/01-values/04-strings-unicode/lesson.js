@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `formatOrderLine(title, qty, price)` 返回 `\"<title> x<qty> = ¥<qty*price>\"`，以及 `countCodePoints(str)` 返回真实 Unicode 码点个数。";
+  "收银台要打一行小票：商品名、数量、金额。请写 formatOrderLine(title, qty, price)，例如「拿铁」、2、18 得到「拿铁 x2 = ¥36」。短信里的表情也算一个字。请写 countCodePoints(str)，「A🚀B」必须数成 3，不能把火箭拆成两个字。";
 
 export async function runDemo(ctx) {
   const rocket = "🚀";

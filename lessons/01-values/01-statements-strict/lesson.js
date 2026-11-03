@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `evaluateLinear(k, x, b)` 计算 `k * x + b`，以及 `isStrictMode()` 返回当前函数内直接调用时的 `this === undefined`。";
+  "信贷报价先按「系数 × 金额 + 固定费用」算出应收。请写 evaluateLinear(k, x, b)，返回 k * x + b。上线前还要自检运行环境：请写 isStrictMode()。这个函数被普通调用时，严格模式下函数里的 this 是 undefined，这时返回 true。";
 
 export async function runDemo(ctx) {
   const exprValue = 3 * 4 + 2;

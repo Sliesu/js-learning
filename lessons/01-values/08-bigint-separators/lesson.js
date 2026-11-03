@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `addSnowflakeIds(idStrA, idStrB)`：把两个超大整数字符串按 `BigInt` 相加后返回字符串结果。";
+  "支付流水号长到普通数字存不下，直接相加会丢掉末尾。请写 addSnowflakeIds(idStrA, idStrB)：把两个流水号字符串按 BigInt 相加，结果仍用字符串返回，一位都不能错。";
 
 export async function runDemo(ctx) {
   const max = Number.MAX_SAFE_INTEGER;

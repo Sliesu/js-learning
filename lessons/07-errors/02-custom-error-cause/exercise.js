@@ -1,15 +1,12 @@
-// 练习 7.2：自定义错误子类与 error.cause 链
+// 校验错误要带上栏位名，并挂住底层原因。
 export class DataValidationError extends Error {
   constructor(message, field, options) {
-    // TODO: 调用 super(message, options)，设置 this.name = "DataValidationError" 与 this.field = field
     super(message);
   }
 }
 
+// amount 必须是大于 0 的数字，否则抛出 DataValidationError。
+// 栏位是 "amount"，消息是 "Invalid order amount"。
+// 底层原因是 RangeError("amount must be positive")。
 export function parseOrderAmount(record) {
-  // TODO:
-  // 如果 typeof record?.amount !== "number" || !(record.amount > 0)
-  // 构造底层原因 const root = new RangeError("amount must be positive")
-  // 并抛出 new DataValidationError("Invalid order amount", "amount", { cause: root })
-  // 正常时返回 record.amount
 }

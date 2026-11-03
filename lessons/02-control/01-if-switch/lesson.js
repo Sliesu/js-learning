@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `calcDiscountRate(tier, amount)`：`gold` 打 85 折（`0.85`），`silver` 打 9 折（`0.9`），`bronze` 满 500 打 95 折（`0.95`）否则不打折（`1`），其余等级返回 `1`。";
+  "会员结账时要算出应付折扣。请写 calcDiscountRate(tier, amount)，返回折扣系数，不是折后价。金卡 gold 一律 0.85。银卡 silver 一律 0.9。铜卡 bronze 本单满 500 元是 0.95，不满是 1。其他等级，包括散客，都是 1，表示不打折。";
 
 export async function runDemo(ctx) {
   function labelStatus(status) {

@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `createSteppedRange(start, end, step = 1)`：返回一个手写实现 `[Symbol.iterator]()` 的可迭代对象，按步长产出从 `start` 到 `<= end` 的所有数字。";
+  "会计期间要能用 for...of 一个个取，但不必先生成整张数组。请写 createSteppedRange(start, end, step = 1)，返回一个可迭代对象。它从 start 开始，每次加 step，产出所有小于等于 end 的数。例如 1 到 5、步长 2，展开后是 [1, 3, 5]。";
 
 export async function runDemo(ctx) {
   const countdown = {

@@ -1,8 +1,5 @@
-// 练习 6.5：使用 #token 私有字段与 #token in obj 品牌检查
+// 令牌放在私有字段 #token 里，外面不能直接读取。
+// verify(candidate) 判断候选值是不是这把令牌。
+// static isVault(obj) 判断 obj 是不是真的 TokenVault。
 export class TokenVault {
-  // TODO:
-  // 声明私有字段 #token
-  // constructor(token) 保存 #token
-  // verify(candidate) 返回 candidate === this.#token
-  // static isVault(obj) 当 obj 是对象且非 null 且 #token in obj 时返回 true
 }

@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `calcWeightedSum(multiplier = 1, ...numbers)`：将 `numbers` 中所有数字求和后再乘以 `multiplier`。";
+  "一批费用要先加总，再乘上一个系数。请写 calcWeightedSum(multiplier = 1, ...numbers)。numbers 是后面所有金额。没传系数时系数按 1。返回「金额之和 × 系数」。";
 
 export async function runDemo(ctx) {
   function demo(a = 10, ...rest) {

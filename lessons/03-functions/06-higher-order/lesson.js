@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `once(fn)`：返回一个包装函数，只在第一次调用时真正执行 `fn(...args)`，后续调用直接返回第一次的缓存结果。";
+  "开户短信只能发一次，客户连点也不能重发。请写 once(fn)，返回一个新函数。这个新函数第一次被调用时，才真正执行 fn，参数原样传进去，并记住返回值。之后无论再调用多少次，都直接交回第一次的结果，fn 不能再跑。";
 
 export async function runDemo(ctx) {
   const withLog = (fn) => (...args) => {

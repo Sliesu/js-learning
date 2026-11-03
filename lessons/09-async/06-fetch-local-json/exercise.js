@@ -1,7 +1,5 @@
-// 练习 9.6：读取 data/products.json 并转换计算出库存货值列表
+// 读取 data/products.json。
+// 每样商品返回 { id, title, stockValue }，stockValue = price * stock。
+// 按 stockValue 从高到低排列。
 export async function loadInventoryValue(ctx) {
-  // TODO:
-  // 1. const products = await ctx.fetchJson("data/products.json")
-  // 2. 映射为 { id, title, stockValue: price * stock }
-  // 3. 按 stockValue 降序返回
 }

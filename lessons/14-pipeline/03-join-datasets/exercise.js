@@ -1,6 +1,5 @@
-// 练习 14.3：实现用户表与已支付订单的 Left Join 汇总
+// 每个客户都返回一行，顺序跟 users 一致。
+// 只统计已支付订单的笔数 paidCount 和金额 paidTotal。没有则为 0。
+// 返回 { userId, name, paidCount, paidTotal }。
 export function leftJoinUserOrderStats(users, orders) {
-  // TODO:
-  // 统计每个 userId 在 status === "paid" 订单中的笔数 paidCount 与金额和 paidTotal
-  // 按 users 原顺序返回 [{ userId: u.id, name: u.name, paidCount, paidTotal }, ...]
 }

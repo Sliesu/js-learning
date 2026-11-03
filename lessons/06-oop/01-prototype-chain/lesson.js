@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `getPrototypeChainDepth(obj)`：统计从 `obj` 出发顺着 `Object.getPrototypeOf` 走到 `null` 需要经过多少个非空原型对象。";
+  "审计要知道一个账户对象往上挂了几层模板。请写 getPrototypeChainDepth(obj)。从 obj 出发，一层层找原型，数到 null 之前经过了几个原型。obj 自己不算一层。没有任何原型时结果是 0。";
 
 export async function runDemo(ctx) {
   const base = { role: "viewer" };

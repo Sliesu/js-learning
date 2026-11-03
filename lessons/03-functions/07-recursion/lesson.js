@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `sumTreeValues(node)`：给定形如 `{ value: number, children?: Node[] }` 的树节点，递归计算整棵树所有节点的 `value` 总和（若 `node` 为空返回 `0`）。";
+  "机构是一棵树：每个节点有 value，下面还可以有 children。请写 sumTreeValues(node)，把这棵树上所有节点的 value 加总。没有节点时返回 0。每个子节点按同样的规则继续加。";
 
 export async function runDemo(ctx) {
   const tree = {

@@ -1,7 +1,4 @@
-// 练习 9.4：用 async / await 按依赖顺序调用异步数据函数
+// 先查客户。客户不存在或未激活，返回 null。
+// 再查该客户的订单，只留已支付，按 createdAt 从新到旧，返回最近一笔。没有则 null。
 export async function fetchUserLatestPaidOrder(userId, getUser, getOrdersByUser) {
-  // TODO:
-  // 1. const user = await getUser(userId); 若 !user || !user.active 返回 null
-  // 2. const orders = await getOrdersByUser(user.id);
-  // 3. 筛选 status === "paid"，按 createdAt 字符串降序排列，返回第一条（若无则返回 null）
 }

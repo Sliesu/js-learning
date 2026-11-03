@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现纯函数 `appendTagPure(user, newTag)`：不修改原 `user` 及其 `tags` 数组，返回一个追加了 `newTag` 的新用户对象。";
+  "给客户加一个标签时，不能改掉档案原件。请写 appendTagPure(user, newTag)，返回一份新档案：原有字段都还在，tags 是原标签再加上 newTag。原来的 user 和原来的 tags 数组都必须保持原样，不能 push 进原数组。";
 
 export async function runDemo(ctx) {
   const origin = { name: "林晓", tags: ["vip"] };

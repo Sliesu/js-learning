@@ -1,4 +1,4 @@
-// 练习 4.5：链式使用 filter + flatMap + reduce 汇总订单金额
+// 只统计 status 为 "paid" 的订单。
+// 把这些订单的商品行摊平，每行金额 = qty * unitPrice，返回合计。
 export function calcPaidItemsRevenue(orders) {
-  // TODO: 只统计 status === "paid" 的订单下所有 items 的 qty * unitPrice 之和
 }

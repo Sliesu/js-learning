@@ -1,4 +1,4 @@
-// 练习 4.3：对象合并与解构重命名、默认值
+// 用 patch 覆盖 rawUser。
+// 返回 { id, name, location }。name 默认「匿名」，city 改名为 location，默认「未知」。
 export function normalizeUserConfig(rawUser, patch) {
-  // TODO: 先用 { ...rawUser, ...patch } 合并，再提取并返回 { id, name, location }
 }

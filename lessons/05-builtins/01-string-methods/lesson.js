@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `maskPhone(raw)`：先 `trim()` 并用 `replaceAll('-', '')` 去掉连字符，再将中间 4 位替换为 `'****'`（如 `'138-1234-5678'` -> `'138****5678'`）。";
+  "客服导出的手机号里夹着空格和横线，上屏前要打码。请写 maskPhone(raw)。先去掉首尾空白和所有 \"-\"。然后只显示前 3 位和后 4 位，中间固定换成 ****。例如 \"138-1234-5678\" 得到 \"138****5678\"。";
 
 export async function runDemo(ctx) {
   const code = "7".padStart(4, "0");

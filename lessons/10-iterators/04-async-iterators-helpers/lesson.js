@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `collectPaginated(fetchPage)`：调用异步分页函数 `await fetchPage(page)`（从 `page = 1` 开始，返回 `{ items: [], hasMore: boolean }`），用 `async function*` 或循环收集全部 `items` 返回一维数组。";
+  "交易明细接口一页一页给。请写 collectPaginated(fetchPage)。从第 1 页开始，等待 fetchPage(page)。每一页的形状是 { items, hasMore }。把 items 按页序全部接成一个数组。hasMore 为假就停，不要再要下一页。";
 
 export async function runDemo(ctx) {
   async function* asyncNums() {

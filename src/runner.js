@@ -5,7 +5,7 @@ import { formatTextarea, handleEditorKeydown, renderGutter } from "./editor.js";
 
 const STORAGE_KEY = "js_learn_progress_v1";
 const LAST_LESSON_KEY = "js_learn_current_lesson_v1";
-const draftKey = (id) => `js_learn_draft_${id}`;
+const draftKey = (id) => `js_learn_draft_v2_${id}`;
 
 const state = {
   tab: "lessons",

@@ -1,9 +1,8 @@
-// 练习 1.1：表达式求值与严格模式检测
+// 报价：系数 k、金额 x、固定费用 b，应收 = k * x + b。
 export function evaluateLinear(k, x, b) {
-  // TODO: 返回 k * x + b 的计算结果
 }
 
+// 自检：当前是不是严格模式。直接调用时，严格模式下 this 严格等于 undefined。
 export function isStrictMode() {
-  // TODO: 返回在严格模式下普通函数内的 this 是否严格等于 undefined
   return false;
 }

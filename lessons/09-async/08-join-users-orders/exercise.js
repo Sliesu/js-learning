@@ -1,7 +1,5 @@
-// 练习 9.8：并发请求 users 与 orders 并关联生成已支付订单摘要
+// 同时读取 data/users.json 和 data/orders.json。
+// 只留已支付订单。
+// 返回 { orderId, userName, city, total }。total 是该订单商品金额合计。
 export async function loadEnrichedPaidOrders(ctx) {
-  // TODO:
-  // 1. 用 Promise.all 并发调用 ctx.fetchJson("data/users.json") 和 ctx.fetchJson("data/orders.json")
-  // 2. 筛选 status === "paid" 的订单
-  // 3. 返回 { orderId: o.id, userName: 对应用户的 name, city: 对应用户的 city, total: items 总金额 } 数组
 }

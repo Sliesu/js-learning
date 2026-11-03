@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `buildQueryUrl(baseUrl, paramsObj)`：用 `new URL(baseUrl)` 将 `paramsObj` 中非 `null`/`undefined` 的键值设置到 `url.searchParams` 中并返回 `url.toString()`。";
+  "查询账户时，空条件不要出现在地址里。请写 buildQueryUrl(baseUrl, paramsObj)。从 baseUrl 做出 URL，只把值不是 null、也不是 undefined 的条件写进查询串，数值也转成文字。返回完整地址。";
 
 export async function runDemo(ctx) {
   const u = new URL("https://api.example.com/orders");

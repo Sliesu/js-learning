@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `putAndQueryByMinAmount(records, minAmount)`：若浏览器环境存在 `indexedDB` 可用其写入并读取（或使用同构异步表对象），最终返回 `amount >= minAmount` 且按 `id` 升序排列的记录数组。";
+  "一批本地订单要先按单号归并，再查出达到金额门槛的单。请写 putAndQueryByMinAmount(records, minAmount)。同一 id 后写入的覆盖前面的。浏览器有 indexedDB 就用它保存；没有就用 Map 按 id 归并。最后只留 amount 大于等于 minAmount 的记录，按 id 字典序升序返回。";
 
 export async function runDemo(ctx) {
   const hasIdb = typeof globalThis.indexedDB !== "undefined";

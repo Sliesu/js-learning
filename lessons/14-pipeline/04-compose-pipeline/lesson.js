@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `pipe(...fns)` 与 `pipeAsync(...fns)`：分别支持同步从左到右传递值、以及异步 `await` 从左到右传递值。";
+  "日终步骤要能串成一条管道，上一步的结果就是下一步的输入。请写 pipe(...fns)，返回一个函数：从初始值开始，按从左到右的顺序同步执行每个函数。再写 pipeAsync(...fns)，同样从左到右，但每一步都等待完成后再交给下一步。";
 
 export async function runDemo(ctx) {
   const pipe =

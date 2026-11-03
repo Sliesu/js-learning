@@ -1,8 +1,9 @@
-// 练习 1.3：金额相加与数值区间限制
+// 两笔人民币入同一个账户。0.1 元 + 0.2 元必须等于 0.3 元。
+// 先把每一笔四舍五入成「分」，加完再除以 100 换回「元」。
 export function addCurrency(a, b) {
-  // TODO: 将 a 和 b 按 100 倍四舍五入为分后相加，再除以 100 返回
 }
 
+// 单笔金额只能落在 [min, max]。
+// 不是有限数字（NaN、Infinity）时，按下限 min 入账。
 export function clampNumber(val, min, max) {
-  // TODO: 若 !Number.isFinite(val) 返回 min；否则将 val 限制在 [min, max] 之间
 }

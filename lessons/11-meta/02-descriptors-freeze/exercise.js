@@ -1,5 +1,3 @@
-// 练习 11.2：递归深冻结对象 deepFreeze(obj)
+// 冻结对象自己，以及里面嵌套的每一层对象和数组。返回原对象。
 export function deepFreeze(obj) {
-  // TODO:
-  // 若 obj 是非 null 的 object，先对所有自身属性值递归调用 deepFreeze，最后返回 Object.freeze(obj)
 }

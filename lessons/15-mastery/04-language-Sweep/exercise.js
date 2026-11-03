@@ -1,11 +1,8 @@
-// 练习 15.4：综合演练 globalThis、**、.at(-1)、findLast 与 Object.fromEntries
+// 返回点检结果：
+// hasGlobal：globalThis 是不是对象。
+// power：2 的 8 次方。
+// lastItem：nums 的最后一项。
+// lastEven：nums 里最后一个偶数。
+// doubledPrices：每个价格乘 2，键不变。
 export function sweepModernFeatures(nums, priceMapObj) {
-  // TODO: 返回
-  // {
-  //   hasGlobal: typeof globalThis === "object",
-  //   power: 2 ** 8,
-  //   lastItem: nums.at(-1),
-  //   lastEven: nums.findLast((n) => n % 2 === 0),
-  //   doubledPrices: Object.fromEntries(Object.entries(priceMapObj).map(([k, v]) => [k, v * 2]))
-  // }
 }

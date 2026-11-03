@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `createAuditedObject(initialObj)`：返回 `{ proxy, history }`；每次通过 `proxy` 设置属性 `proxy[k] = v` 时，向 `history` 推入 `{ key: String(k), oldValue, newValue: v }` 并用 `Reflect.set` 完成写入。";
+  "监管要求记下余额对象的每一次修改。请写 createAuditedObject(initialObj)，返回 { proxy, history }。通过 proxy 给属性赋值时，先往 history 追加 { key, oldValue, newValue }，key 用字符串，oldValue 是改前的值，newValue 是新值。然后再真正写进原对象。直接改 initialObj 不算进 history。";
 
 export async function runDemo(ctx) {
   const log = [];

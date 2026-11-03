@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `recordsToJsonBlob(records)`（把数组序列化为 JSON 字符串并包进 `type: 'application/json'` 的 `Blob`）与 `parseJsonBlob(blob)`（调用 `await blob.text()` 再解析回 JS 值）。";
+  "对账结果要打包成一份 JSON 文件交给浏览器下载。请写 recordsToJsonBlob(records)，把数组变成 JSON 文字，放进类型为 application/json 的 Blob。收到这种文件时，请写 parseJsonBlob(blob)：先读出文字，再解析回原来的数据。";
 
 export async function runDemo(ctx) {
   const blob = new Blob([JSON.stringify({ hello: "world" })], { type: "application/json" });

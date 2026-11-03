@@ -1,8 +1,7 @@
-// 练习 1.5：真假值判断与逻辑短路
+// 把任意表单值收成 true 或 false。空字符串、0、null 都是 false。
 export function isTruthy(val) {
-  // TODO: 返回 val 对应的布尔真假（true 或 false）
 }
 
+// 三栏备注只留第一段有内容的。空字符串跳过，用 || 往后找。
 export function pickFirstNonEmpty(a, b, fallback) {
-  // TODO: 利用 || 返回 a、b、fallback 中第一个真值
 }

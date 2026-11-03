@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `normalizeUserConfig(rawUser, patch)`：从合并后的 `{ ...rawUser, ...patch }` 中解构出 `id`、`name`（默认 `'匿名'`）、`city`（重命名为 `location`，默认 `'未知'`），返回 `{ id, name, location }`。";
+  "客户改资料时，新提交的内容盖过旧档案，没改的栏保留。请写 normalizeUserConfig(rawUser, patch)。先把 patch 盖到 rawUser 上。然后取出 id；name 没填就用「匿名」；城市字段 city 改名叫 location 交给后面的系统，没填城市就用「未知」。返回 { id, name, location }。";
 
 export async function runDemo(ctx) {
   const raw = { id: "u1", city: "上海" };

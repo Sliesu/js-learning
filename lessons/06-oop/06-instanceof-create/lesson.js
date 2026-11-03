@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `countWordsSafe(words)`：用 `Object.create(null)` 创建计数器统计 `words` 数组中每个词出现的次数（即使包含 `'constructor'` 或 `'toString'` 也能正常计数）。";
+  "词频统计时，客户文本里可能出现 \"constructor\"、\"toString\" 这种和对象内置名字撞车的词。普通对象会算错。请写 countWordsSafe(words)，用一个没有原型的对象当计数器，返回每个词出现的次数。这些撞车词也要按普通词计数。";
 
 export async function runDemo(ctx) {
   const dict = Object.create(null);

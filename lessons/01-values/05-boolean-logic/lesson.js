@@ -12,7 +12,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `isTruthy(val)` 返回布尔值，以及 `pickFirstNonEmpty(a, b, fallback)` 返回第一个非空字符串（用 `||` 短路）。";
+  "开户勾选框、空备注、数字 0 不能混为一谈。请写 isTruthy(val)，把任意值收成 true 或 false。客服备注有三栏，屏幕只显示第一段真正写了字的内容。请写 pickFirstNonEmpty(a, b, fallback)：用 || 取 a、b、fallback 里第一个算「有内容」的值。空字符串要跳过。";
 
 export async function runDemo(ctx) {
   ctx.log("Boolean([]):", Boolean([]), "Boolean(''):", Boolean(""));

@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `runWithTimeout(taskFn, timeoutMs)`：传入接收 `signal` 的异步函数 `taskFn(signal)`，若超过 `timeoutMs` 仍未完成则调用 `controller.abort()` 并 reject `new Error('Timeout')`。";
+  "调用渠道不能无限等。请写 runWithTimeout(taskFn, timeoutMs)。把取消信号交给 taskFn(signal)。在时限内完成就返回它的结果，并清掉计时器。超时就取消这次调用，并拒绝为 Error，消息正好是 \"Timeout\"。";
 
 export async function runDemo(ctx) {
   const ctrl = new AbortController();

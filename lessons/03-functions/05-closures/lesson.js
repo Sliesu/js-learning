@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `createBankAccount(initialBalance = 0)`：返回 `{ deposit(n), withdraw(n), getBalance() }`；余额不足时 `withdraw` 不扣款并返回 `false`，成功扣款返回 `true`。";
+  "活期账户的余额不能让外面直接改。请写 createBankAccount(initialBalance = 0)，返回 { deposit(amount), withdraw(amount), getBalance() }。deposit 把金额加进余额并返回最新余额。withdraw 在余额够时扣款并返回 true；余额不够时一分不扣，返回 false。余额只留在函数内部，外面只能通过这三个方法碰它。";
 
 export async function runDemo(ctx) {
   function createCounter(start = 0) {

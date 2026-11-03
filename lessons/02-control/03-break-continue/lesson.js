@@ -11,7 +11,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `findInMatrix(grid, target)`：在二维数组 `grid` 中寻找 `target`，找到即返回 `{ row, col }`，未找到返回 `null`（跳过非数组的无效行）。";
+  "清算文件是一张表套一张表。请写 findInMatrix(grid, target)，找出目标金额第一次出现的位置，返回 { row, col }，行列都从 0 开始。某一行如果不是数组，是废行，跳过继续找。整张表都没有，返回 null。找到第一次就停，不要再往下扫。";
 
 export async function runDemo(ctx) {
   const matrix = [

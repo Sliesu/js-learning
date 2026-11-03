@@ -1,4 +1,4 @@
-// 练习 5.5：使用 Set 计算两个标签列表的交集、差集与并集
+// 比较两份标签。
+// common：两边都有。onlyInA：只在 A。all：两边合起来。重复的只留一次。
 export function analyzeTagSets(tagsA, tagsB) {
-  // TODO: 返回 { common: [...], onlyInA: [...], all: [...] }
 }

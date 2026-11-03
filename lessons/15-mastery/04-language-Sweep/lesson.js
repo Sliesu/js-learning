@@ -13,7 +13,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `sweepModernFeatures(nums, priceMapObj)`：返回 `{ hasGlobal: typeof globalThis === 'object', power: 2 ** 8, lastItem: nums.at(-1), lastEven: nums.findLast(n => n % 2 === 0), doubledPrices: 用 entries + fromEntries 把 priceMapObj 所有值乘 2 }`。";
+  "核心升级前做一次语言能力点检。请写 sweepModernFeatures(nums, priceMapObj)，返回这五项：hasGlobal 表示 globalThis 是不是对象；power 是 2 的 8 次方；lastItem 是 nums 的最后一项，空数组时按取不到处理；lastEven 是 nums 里最后一个偶数；doubledPrices 把 priceMapObj 每个价格乘 2，键保持不变。";
 
 export async function runDemo(ctx) {
   const nums = [1, 4, 7, 10, 13];

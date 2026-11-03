@@ -10,7 +10,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `leftJoinUserOrderStats(users, orders)`：为每位用户关联其 `status === 'paid'` 的订单笔数 `paidCount` 与总消费 `paidTotal`（无订单则为 `0`），返回 `{ userId, name, paidCount, paidTotal }` 数组。";
+  "每个客户都要出现在消费汇总里，哪怕一笔已支付订单都没有。请写 leftJoinUserOrderStats(users, orders)。只统计 status 为 \"paid\" 的订单。按 users 原来的顺序返回 { userId, name, paidCount, paidTotal }。userId 用客户 id。没有已支付订单时，笔数和金额都是 0。";
 
 export async function runDemo(ctx) {
   const [users, orders] = await Promise.all([

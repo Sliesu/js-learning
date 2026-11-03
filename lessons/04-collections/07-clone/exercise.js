@@ -1,4 +1,3 @@
-// 练习 4.7：使用 structuredClone 深拷贝并安全修改嵌套数组元素
+// 深拷贝整张订单后，只改副本里指定商品行的 qty，返回副本。
 export function cloneAndUpdateQty(order, itemIndex, newQty) {
-  // TODO: 深拷贝 order，修改 copy.items[itemIndex].qty = newQty 并返回 copy
 }

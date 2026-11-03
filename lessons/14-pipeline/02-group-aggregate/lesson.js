@@ -10,7 +10,7 @@ export const remember = [
 ];
 
 export const taskDescription =
-  "实现 `aggregateServiceLogs(logs)`：按 `log.service` 分组统计 `data/logs.json`，返回按 `service` 字典序升序排列的 `{ service, count, errorCount, maxLatencyMs }` 数组。";
+  "运维要按服务看日志。请写 aggregateServiceLogs(logs)。按 service 分组，每组给出 service、count（总条数）、errorCount（level 为 \"ERROR\" 的条数）、maxLatencyMs（最大 latencyMs）。结果按 service 字典序升序返回。";
 
 export async function runDemo(ctx) {
   const logs = await ctx.fetchJson("data/logs.json");
